@@ -1,7 +1,8 @@
+// src/app/page.tsx
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-2xl font-semibold">Vatsalya Children Care</h1>
+    <main className="pt-20 p-8 font-alice text-2xl text-navy">
+      Build in progress…
     </main>
   );
 }
