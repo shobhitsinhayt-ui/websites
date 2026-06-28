@@ -20,14 +20,14 @@ const SERVICES = [
     title: "General Pediatric OPD",
     subtitle: "Up to 18 years",
     description:
-      "Expert day-to-day medical care for children of every age — from common fevers, coughs, and infections to ongoing health concerns. Treated with patience, clear explanations, and a calm, child-friendly approach.",
+      "Expert day-to-day medical care for children of every age, from common fevers, coughs, and infections to ongoing health concerns. Every child is treated with patience, clear explanations, and a calm, child-friendly approach.",
   },
   {
     icon: Shield,
     title: "Vaccination Clinic",
     subtitle: "IAP 2025 Schedule",
     description:
-      "Complete immunization following the Indian Academy of Pediatrics (IAP) 2025 schedule — from birth-dose vaccines through adolescent boosters. Personal immunization records maintained with timely reminders.",
+      "Complete immunization following the Indian Academy of Pediatrics (IAP) 2025 schedule, from birth-dose vaccines through adolescent boosters. We maintain your child's personal immunization record and send timely reminders.",
   },
   {
     icon: Baby,
@@ -41,7 +41,7 @@ const SERVICES = [
     title: "Breastfeeding Clinic",
     subtitle: "Antenatal & Postnatal",
     description:
-      "Dedicated lactation support before and after delivery. From preparing during pregnancy to resolving latch, supply, and feeding difficulties — our certified lactation consultant helps you give your baby the healthiest start.",
+      "Dedicated lactation support before and after delivery. From preparing during pregnancy to resolving latch, supply, and feeding difficulties, our certified lactation consultant helps you give your baby the healthiest start.",
   },
   {
     icon: ClipboardCheck,
@@ -55,14 +55,14 @@ const SERVICES = [
     title: "Growth & Development Assessment",
     subtitle: "Milestone Monitoring",
     description:
-      "Structured monitoring of your child's height, weight, head circumference, and developmental milestones — so any delay or concern is identified early and supported with the right guidance at the right time.",
+      "Structured monitoring of your child's height, weight, head circumference, and developmental milestones, so any delay or concern is identified early and supported with the right guidance at the right time.",
   },
   {
     icon: Apple,
     title: "Infant & Child Nutrition Program",
     subtitle: "Personalised Guidance",
     description:
-      "Personalised nutrition guidance for every stage — breastfeeding, weaning, fussy eaters, and growing children. We help you build healthy eating habits that support strong growth, immunity, and development.",
+      "Personalised nutrition guidance for every stage: breastfeeding, weaning, fussy eaters, and growing children. We help you build healthy eating habits that support strong growth, immunity, and development.",
   },
   {
     icon: Users,
@@ -76,7 +76,7 @@ const SERVICES = [
     title: "Teleconsultation",
     subtitle: "Breastfeeding Support",
     description:
-      "Can't visit in person? Get expert lactation support from home through online consultations — practical, reassuring guidance for feeding challenges whenever you need it.",
+      "Can't visit in person? Get expert lactation support from home through online consultations. Practical, reassuring guidance for feeding challenges, whenever you need it.",
   },
 ];
 

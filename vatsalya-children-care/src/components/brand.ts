@@ -74,12 +74,12 @@ export const FAQ_ITEMS = [
   {
     question: "What age range does Vatsalya Children Care treat?",
     answer:
-      "We care for children from birth through 18 years — newborns, infants, toddlers, school-age children, and adolescents.",
+      "We care for children from birth through 18 years: newborns, infants, toddlers, school-age children, and adolescents.",
   },
   {
     question: "Who is the doctor at Vatsalya Children Care?",
     answer:
-      "Dr. Aashita A. Sinha — MBBS, MD Pediatrics — a pediatrician, neonatologist, and certified lactation consultant practising in Sola, Ahmedabad.",
+      "Dr. Aashita A. Sinha (MBBS, MD Pediatrics) is a pediatrician, neonatologist, and certified lactation consultant practising in Sola, Ahmedabad.",
   },
   {
     question: "Where is the clinic located?",
@@ -115,7 +115,7 @@ export const FAQ_ITEMS = [
   {
     question: "Do you offer online or teleconsultations?",
     answer:
-      "Yes — we offer teleconsultations for breastfeeding and lactation issues, so you can get expert guidance from home.",
+      "Yes. We offer teleconsultations for breastfeeding and lactation issues, so you can get expert guidance from home.",
   },
   {
     question: "What should I bring to my child's first visit?",

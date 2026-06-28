@@ -34,7 +34,7 @@ export default function Navbar() {
             }`}
           >
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Vatsalya Children Care logo"
               width={40}
               height={40}
