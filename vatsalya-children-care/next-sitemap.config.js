@@ -6,8 +6,17 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
   robotsTxtOptions: {
-    policies: [{ userAgent: "*", allow: "/" }],
-    // AI crawlers (AEO) — explicitly welcome them
+    // AEO strategy: explicitly welcome AI crawlers so the clinic can be cited
+    // by ChatGPT, Perplexity, Google AI Overviews, Gemini, and Claude.
+    policies: [
+      { userAgent: "*", allow: "/" },
+      { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "ChatGPT-User", allow: "/" },
+      { userAgent: "OAI-SearchBot", allow: "/" },
+      { userAgent: "PerplexityBot", allow: "/" },
+      { userAgent: "ClaudeBot", allow: "/" },
+      { userAgent: "Google-Extended", allow: "/" },
+    ],
     additionalSitemaps: [],
   },
 };

@@ -4,6 +4,7 @@
 export const NAP = {
   name: "Vatsalya Children Care",
   phone: "+91 90160 39796",
+  phoneE164: "+919016039796",
   phoneTel: "tel:+919016039796",
   whatsapp:
     "https://wa.me/919016039796?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Vatsalya%20Children%20Care",
@@ -47,6 +48,7 @@ export const DOCTOR = {
     "GCS Medical College & Hospital, Ahmedabad",
     "Surat Municipal Institute of Medical Education & Research (SMIMER), Surat",
   ],
+  languages: ["English", "Hindi", "Gujarati"],
 } as const;
 
 export const BRAND = {
@@ -105,7 +107,7 @@ export const FAQ_ITEMS = [
   {
     question: "What are the clinic's OPD timings?",
     answer:
-      "TODO — OPD timings to be confirmed by Dr. Aashita. Please WhatsApp or call +91 90160 39796 for current hours.",
+      "For current OPD days and timings, please WhatsApp or call us at +91 90160 39796 and we'll share the next available session that suits you.",
   },
   {
     question:

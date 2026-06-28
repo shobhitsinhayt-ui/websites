@@ -73,8 +73,12 @@ export default function LocationSection() {
                 <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-navy mb-1">
                   OPD Timings
                 </p>
-                <p className="font-poppins text-sm text-ink/60 italic">
-                  TODO — OPD days and hours to be confirmed by Dr. Aashita.
+                <p className="font-poppins text-sm text-ink/70">
+                  WhatsApp or call{" "}
+                  <a href={NAP.phoneTel} className="font-medium text-navy hover:text-gold transition-colors">
+                    {NAP.phone}
+                  </a>{" "}
+                  for current OPD days &amp; timings.
                 </p>
               </div>
             </div>
