@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# next-sitemap generated output
+/public/sitemap.xml
+/public/sitemap-*.xml
+/public/robots.txt
+
+# graphify knowledge-graph artifacts (local analysis only)
+/graphify-out/

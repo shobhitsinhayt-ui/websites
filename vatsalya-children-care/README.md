@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vatsalya Children Care — Website
 
-## Getting Started
+Mobile-first marketing site for **Vatsalya Children Care**, a pediatric clinic in Sola, Ahmedabad, led by Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant).
 
-First, run the development server:
+Single landing page (Phase 1 hero + condensed Phase 2 sections), structured so sections can be split into routes (`/about`, `/services`, `/faqs`, `/blog`, `/contact`) later.
+
+## Stack
+
+- **Next.js 16** (App Router) + **TypeScript**
+- **Tailwind CSS v3** — brand tokens (navy / gold / cream)
+- **Framer Motion** — subtle scroll/hover animation (respects `prefers-reduced-motion`)
+- **lucide-react** — service icons
+- **next-sitemap** — sitemap.xml + robots.txt (postbuild)
+- Fonts via `next/font/google`: **Alice** (headings), **Lora** (italic accents), **Poppins** (body)
+
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build + sitemap
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/components/brand.ts` — **single source of truth**: NAP, doctor, brand copy, and `FAQ_ITEMS`. Both the visible UI and the JSON-LD schema import from here, so contact info and FAQ content can never drift.
+- `src/app/layout.tsx` — metadata (title/description/OG/Twitter/canonical/icons) + injects `JsonLd`.
+- `src/components/JsonLd.tsx` — three JSON-LD blocks: MedicalClinic+LocalBusiness, Physician, FAQPage.
+- `src/app/page.tsx` — composes the 11 section components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Open TODOs (do not invent — confirm with the clinic)
 
-## Learn More
+These are marked `TODO` in code and must be filled before launch:
 
-To learn more about Next.js, take a look at the following resources:
+- **OPD / clinic hours** — `LocationSection`, FAQ Q5, JSON-LD `openingHours`
+- **Google Maps GPS coordinates** — `LocationSection` map embed + JSON-LD `geo`
+- **Dr. Aashita's professional photo** — `AboutPreview`
+- **Years of experience + medical-council registration number** — `AboutPreview`, Physician schema
+- **Walk-in vs appointment policy** — FAQ
+- Logo ring text says "Hospital" vs brand "Care" — standardize on **Care**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy (Vercel)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Repo: `shobhitsinhayt-ui/websites` · this project lives in `vatsalya-children-care/`.
+On Vercel import, set **Root Directory = `vatsalya-children-care`**. Then point DNS for
+`vatsalyachildrencare.in` at Vercel.
