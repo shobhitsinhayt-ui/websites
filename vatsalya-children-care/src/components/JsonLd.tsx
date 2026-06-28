@@ -21,12 +21,9 @@ const clinicSchema = {
     postalCode: NAP.address.postalCode,
     addressCountry: "IN",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "TODO — confirm GPS coordinates",
-    longitude: "TODO — confirm GPS coordinates",
-  },
-  openingHours: "TODO — confirm OPD days and hours",
+  hasMap: NAP.mapsUrl,
+  // geo (lat/long) and openingHours intentionally omitted until confirmed —
+  // shipping placeholder values would make the structured data invalid.
   sameAs: [NAP.instagram],
 };
 

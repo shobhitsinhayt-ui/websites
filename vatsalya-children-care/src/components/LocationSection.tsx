@@ -55,6 +55,15 @@ export default function LocationSection() {
                 <p className="mt-1 font-poppins text-xs text-ink/60">
                   Near Science City · Near Gujarat High Court
                 </p>
+                <a
+                  href={NAP.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1.5 font-poppins text-sm font-semibold text-gold hover:text-navy transition-colors"
+                >
+                  <MapPin className="h-4 w-4" aria-hidden="true" />
+                  Open in Google Maps
+                </a>
               </div>
             </div>
 
@@ -125,24 +134,31 @@ export default function LocationSection() {
             </div>
           </m.div>
 
-          {/* Map placeholder */}
-          <m.div
+          {/* Embedded Google Map (no API key) — lazy-loaded, click opens full Maps */}
+          <m.a
+            href={NAP.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Vatsalya Children Care location in Google Maps"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl border-2 border-dashed border-gold/30 bg-cream flex flex-col items-center justify-center min-h-64 p-8 text-center"
+            className="group relative block overflow-hidden rounded-2xl border border-gold/30 shadow-sm min-h-64"
           >
-            <MapPin className="h-10 w-10 text-gold/40 mb-3" aria-hidden="true" />
-            <p className="font-poppins text-sm font-semibold text-navy/60 mb-1">
-              Google Maps Embed
-            </p>
-            <p className="font-poppins text-xs text-ink/40">
-              TODO — Add GPS coordinates to enable map embed.
-              <br />
-              509, B-Wing, Grace Business Park, Sola, Ahmedabad
-            </p>
-          </m.div>
+            <iframe
+              title="Map to Vatsalya Children Care, Grace Business Park, Sola, Ahmedabad"
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                NAP.mapsQuery
+              )}&z=16&output=embed`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-full w-full min-h-64 border-0"
+            />
+            <span className="pointer-events-none absolute bottom-3 left-3 rounded-full bg-navy/90 px-3 py-1.5 font-poppins text-xs font-semibold text-white shadow-md transition-colors group-hover:bg-navy">
+              Open in Google Maps →
+            </span>
+          </m.a>
         </div>
       </div>
     </section>
