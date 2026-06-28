@@ -1,7 +1,7 @@
 // src/components/WhyVatsalya.tsx
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 import { COPY } from "./brand";
 
 const fadeUp: Variants = {
@@ -18,7 +18,7 @@ export default function WhyVatsalya() {
     >
       <div className="mx-auto max-w-3xl px-4 md:px-8">
         {/* Gold divider rule above heading */}
-        <motion.div
+        <m.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
@@ -27,7 +27,7 @@ export default function WhyVatsalya() {
           aria-hidden="true"
         />
 
-        <motion.h2
+        <m.h2
           id="why-vatsalya-heading"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,11 +36,11 @@ export default function WhyVatsalya() {
           className="font-alice text-3xl text-navy-deep mb-8 md:text-4xl"
         >
           {COPY.whyVatsalya.heading}
-        </motion.h2>
+        </m.h2>
 
         <div className="space-y-5">
           {COPY.whyVatsalya.paragraphs.map((para, i) => (
-            <motion.p
+            <m.p
               key={i}
               variants={fadeUp}
               initial="hidden"
@@ -50,12 +50,12 @@ export default function WhyVatsalya() {
               className="font-poppins text-base leading-relaxed text-ink md:text-lg"
             >
               {para}
-            </motion.p>
+            </m.p>
           ))}
         </div>
 
         {/* Differentiator callout */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -70,7 +70,7 @@ export default function WhyVatsalya() {
             <strong> certified Lactation Consultant</strong> — offering dedicated
             breastfeeding support antenatal, postnatal, and via teleconsultation.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

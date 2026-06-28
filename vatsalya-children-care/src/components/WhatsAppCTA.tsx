@@ -1,7 +1,7 @@
 // src/components/WhatsAppCTA.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { NAP, BRAND } from "./brand";
 
 export default function WhatsAppCTA() {
@@ -18,7 +18,7 @@ export default function WhatsAppCTA() {
             "repeating-linear-gradient(135deg, #C29138 0px, #C29138 1px, transparent 1px, transparent 12px)",
         }}
       />
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -47,7 +47,7 @@ export default function WhatsAppCTA() {
             Call {NAP.phone}
           </a>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 }

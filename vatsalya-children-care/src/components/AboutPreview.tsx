@@ -1,7 +1,7 @@
 // src/components/AboutPreview.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { DOCTOR, NAP } from "./brand";
 
 export default function AboutPreview() {
@@ -24,7 +24,7 @@ export default function AboutPreview() {
       <div className="mx-auto max-w-6xl px-4 md:px-8 relative">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16 items-center">
           {/* Photo placeholder */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -39,10 +39,10 @@ export default function AboutPreview() {
               </p>
               <div className="absolute -bottom-4 -right-4 h-8 w-8 border-b-2 border-r-2 border-gold opacity-60" aria-hidden="true" />
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Bio */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -78,7 +78,7 @@ export default function AboutPreview() {
             >
               Book a Consultation
             </a>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

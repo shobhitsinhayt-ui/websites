@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { FAQ_ITEMS } from "./brand";
 
@@ -19,7 +19,7 @@ export default function FAQAccordion() {
     >
       <div className="mx-auto max-w-3xl px-4 md:px-8">
         <div className="mb-12 text-center">
-          <motion.div
+          <m.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -27,7 +27,7 @@ export default function FAQAccordion() {
             className="mx-auto mb-4 h-0.5 w-12 bg-gold"
             aria-hidden="true"
           />
-          <motion.h2
+          <m.h2
             id="faq-heading"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,12 +36,12 @@ export default function FAQAccordion() {
             className="font-alice text-3xl text-navy-deep md:text-4xl"
           >
             Frequently Asked Questions
-          </motion.h2>
+          </m.h2>
         </div>
 
         <dl className="space-y-3">
           {FAQ_ITEMS.map((item, i) => (
-            <motion.div
+            <m.div
               key={item.question}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export default function FAQAccordion() {
               </dt>
               <AnimatePresence initial={false}>
                 {openIndex === i && (
-                  <motion.dd
+                  <m.dd
                     key="content"
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
@@ -80,10 +80,10 @@ export default function FAQAccordion() {
                     <p className="px-5 pb-4 font-poppins text-sm leading-relaxed text-ink/80 md:text-base">
                       {item.answer}
                     </p>
-                  </motion.dd>
+                  </m.dd>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </m.div>
           ))}
         </dl>
       </div>

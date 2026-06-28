@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, type Variants } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 import { Phone } from "lucide-react";
 import { NAP, COPY, BRAND, DOCTOR } from "./brand";
 
@@ -44,21 +44,21 @@ export default function Hero() {
       />
 
       <div className="mx-auto max-w-6xl px-4 py-24 md:px-8 md:py-32">
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate="show"
           className="flex flex-col items-center text-center md:items-start md:text-left gap-6"
         >
           {/* Tagline chip */}
-          <motion.div variants={fadeUp}>
+          <m.div variants={fadeUp}>
             <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 font-lora text-sm italic text-gold">
               {BRAND.tagline}
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Logo — mobile only */}
-          <motion.div variants={fadeUp} className="md:hidden">
+          <m.div variants={fadeUp} className="md:hidden">
             <Image
               src="/logo.svg"
               alt="Vatsalya Children Care"
@@ -66,35 +66,35 @@ export default function Hero() {
               height={80}
               priority
             />
-          </motion.div>
+          </m.div>
 
           {/* H1 */}
-          <motion.h1
+          <m.h1
             variants={fadeUp}
             className="font-alice text-3xl leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl"
           >
             Best Pediatrician in Sola, Ahmedabad —{" "}
             <span className="text-gold">Vatsalya Children Care</span>
-          </motion.h1>
+          </m.h1>
 
           {/* Subhead */}
-          <motion.p
+          <m.p
             variants={fadeUp}
             className="max-w-2xl font-poppins text-base leading-relaxed text-white/80 md:text-lg"
           >
             {COPY.hero.subhead}
-          </motion.p>
+          </m.p>
 
           {/* Doctor credentials line */}
-          <motion.p
+          <m.p
             variants={fadeUp}
             className="font-lora text-sm italic text-gold-soft"
           >
             {DOCTOR.name} · {DOCTOR.credentials} · {DOCTOR.roles}
-          </motion.p>
+          </m.p>
 
           {/* CTAs */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             className="flex flex-col gap-3 sm:flex-row"
           >
@@ -118,8 +118,8 @@ export default function Hero() {
               <Phone className="h-4 w-4" aria-hidden="true" />
               {COPY.hero.secondaryCTA}
             </a>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       {/* Wave divider into next section */}

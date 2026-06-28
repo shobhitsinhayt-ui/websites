@@ -4,6 +4,7 @@ import { Alice, Lora, Poppins } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { NAP } from "@/components/brand";
+import MotionProvider from "@/components/MotionProvider";
 
 const alice = Alice({
   weight: "400",
@@ -101,7 +102,9 @@ export default function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className="font-poppins antialiased">{children}</body>
+      <body className="font-poppins antialiased">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

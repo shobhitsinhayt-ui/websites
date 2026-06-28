@@ -1,7 +1,7 @@
 // src/components/ServicesGrid.tsx
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 import {
   Stethoscope,
   Shield,
@@ -95,7 +95,7 @@ export default function ServicesGrid() {
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* Section header */}
         <div className="mb-12 text-center">
-          <motion.div
+          <m.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -103,7 +103,7 @@ export default function ServicesGrid() {
             className="mx-auto mb-4 h-0.5 w-12 bg-gold"
             aria-hidden="true"
           />
-          <motion.h2
+          <m.h2
             id="services-heading"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -112,8 +112,8 @@ export default function ServicesGrid() {
             className="font-alice text-3xl text-navy-deep md:text-4xl"
           >
             Our Services
-          </motion.h2>
-          <motion.p
+          </m.h2>
+          <m.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -122,11 +122,11 @@ export default function ServicesGrid() {
           >
             Comprehensive pediatric care for children from birth through 18 years,
             in Sola, Ahmedabad.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* 3-column grid on desktop, 1 column on mobile */}
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
@@ -136,7 +136,7 @@ export default function ServicesGrid() {
           {SERVICES.map((service) => {
             const Icon = service.icon;
             return (
-              <motion.article
+              <m.article
                 key={service.title}
                 variants={cardVariants}
                 className="group rounded-2xl border border-gold/20 bg-cream p-6 transition-shadow hover:shadow-md hover:shadow-gold/10"
@@ -157,10 +157,10 @@ export default function ServicesGrid() {
                 <p className="font-poppins text-sm leading-relaxed text-ink/80">
                   {service.description}
                 </p>
-              </motion.article>
+              </m.article>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 // src/components/TrustStrip.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const credentials = [
   { label: "MBBS · MD Pediatrics", icon: "🎓" },
@@ -18,7 +18,7 @@ export default function TrustStrip() {
       className="bg-navy-deep py-4 overflow-hidden"
     >
       <div className="mx-auto max-w-6xl px-4">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -34,7 +34,7 @@ export default function TrustStrip() {
               {c.label}
             </span>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

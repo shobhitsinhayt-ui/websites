@@ -1,7 +1,7 @@
 // src/components/LocationSection.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { NAP } from "./brand";
 
@@ -14,7 +14,7 @@ export default function LocationSection() {
     >
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         <div className="mb-12 text-center">
-          <motion.div
+          <m.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -22,7 +22,7 @@ export default function LocationSection() {
             className="mx-auto mb-4 h-0.5 w-12 bg-gold"
             aria-hidden="true"
           />
-          <motion.h2
+          <m.h2
             id="location-heading"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -31,12 +31,12 @@ export default function LocationSection() {
             className="font-alice text-3xl text-navy-deep md:text-4xl"
           >
             Visit Us
-          </motion.h2>
+          </m.h2>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Contact info */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -123,10 +123,10 @@ export default function LocationSection() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Map placeholder */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -142,7 +142,7 @@ export default function LocationSection() {
               <br />
               509, B-Wing, Grace Business Park, Sola, Ahmedabad
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>
