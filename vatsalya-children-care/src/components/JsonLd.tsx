@@ -42,6 +42,22 @@ const physicianSchema = {
     "Vaccination",
   ],
   worksFor: { "@type": "MedicalClinic", name: NAP.name },
+  alumniOf: DOCTOR.alumniOf.map((name) => ({
+    "@type": "CollegeOrUniversity",
+    name,
+  })),
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      name: "Gujarat Medical Council Registration (MBBS)",
+      value: DOCTOR.regMbbs,
+    },
+    {
+      "@type": "PropertyValue",
+      name: "Gujarat Medical Council Registration (MD Pediatrics)",
+      value: DOCTOR.regMd,
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Sola, Ahmedabad",
