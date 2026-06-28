@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <Image src="/logo.svg" alt="Vatsalya Children Care" width={36} height={36} />
+              <Image src="/logo.png" alt="Vatsalya Children Care" width={36} height={36} />
               <span className="font-alice text-sm text-white">{NAP.name}</span>
             </div>
             <p className="font-lora text-xs italic text-gold">{BRAND.tagline}</p>

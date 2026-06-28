@@ -60,7 +60,7 @@ export default function Hero() {
           {/* Logo — mobile only */}
           <m.div variants={fadeUp} className="md:hidden">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Vatsalya Children Care"
               width={80}
               height={80}

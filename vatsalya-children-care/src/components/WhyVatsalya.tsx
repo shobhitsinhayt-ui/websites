@@ -67,8 +67,8 @@ export default function WhyVatsalya() {
           </p>
           <p className="font-poppins text-base text-ink leading-relaxed">
             Vatsalya is one of Ahmedabad&apos;s few pediatric clinics led by a
-            <strong> certified Lactation Consultant</strong> — offering dedicated
-            breastfeeding support antenatal, postnatal, and via teleconsultation.
+            <strong> certified Lactation Consultant</strong>, offering dedicated
+            breastfeeding support antenatally, postnatally, and via teleconsultation.
           </p>
         </m.div>
       </div>
