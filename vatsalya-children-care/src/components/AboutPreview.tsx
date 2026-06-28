@@ -33,9 +33,12 @@ export default function AboutPreview() {
           >
             <div className="relative h-72 w-56 rounded-2xl border-2 border-gold/30 bg-navy-deep flex flex-col items-center justify-center gap-3 md:h-80 md:w-64">
               <span className="text-4xl" aria-hidden="true">👩‍⚕️</span>
-              <p className="font-poppins text-xs text-white/40 text-center px-4">
-                {/* TODO: Replace with professional photo of Dr. Aashita A. Sinha */}
-                TODO — Professional photo of {DOCTOR.name}
+              {/* TODO(internal): replace this placeholder with a professional photo of Dr. Aashita A. Sinha */}
+              <p className="font-alice text-sm text-white/70 text-center px-4">
+                {DOCTOR.name}
+              </p>
+              <p className="font-lora text-xs italic text-gold/70 text-center px-4">
+                {DOCTOR.credentials}
               </p>
               <div className="absolute -bottom-4 -right-4 h-8 w-8 border-b-2 border-r-2 border-gold opacity-60" aria-hidden="true" />
             </div>

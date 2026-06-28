@@ -7,12 +7,17 @@ import { NAP, DOCTOR, FAQ_ITEMS } from "./brand";
 const clinicSchema = {
   "@context": "https://schema.org",
   "@type": ["MedicalClinic", "LocalBusiness"],
+  "@id": `${NAP.website}/#clinic`,
   name: NAP.name,
   image: `${NAP.website}/logo.png`,
+  logo: `${NAP.website}/logo.png`,
   url: NAP.website,
-  telephone: NAP.phone,
+  telephone: NAP.phoneE164,
   email: NAP.email,
+  description:
+    "Pediatric clinic in Sola, Ahmedabad offering general pediatric OPD, IAP-schedule vaccination, newborn care, well-baby checkups, growth and development assessment, child nutrition, teenage health counselling, and specialised breastfeeding and lactation support for children from birth through 18 years.",
   medicalSpecialty: "Pediatric",
+  areaServed: ["Sola", "Science City", "Gujarat High Court area", "Ahmedabad"],
   address: {
     "@type": "PostalAddress",
     streetAddress: NAP.address.street,
@@ -22,6 +27,7 @@ const clinicSchema = {
     addressCountry: "IN",
   },
   hasMap: NAP.mapsUrl,
+  employee: { "@id": `${NAP.website}/#physician` },
   // geo (lat/long) and openingHours intentionally omitted until confirmed —
   // shipping placeholder values would make the structured data invalid.
   sameAs: [NAP.instagram],
@@ -30,15 +36,23 @@ const clinicSchema = {
 const physicianSchema = {
   "@context": "https://schema.org",
   "@type": "Physician",
+  "@id": `${NAP.website}/#physician`,
   name: DOCTOR.name,
+  url: NAP.website,
+  description: DOCTOR.bio,
   medicalSpecialty: "Pediatrics",
+  knowsLanguage: DOCTOR.languages,
   availableService: [
     "Pediatrics",
     "Neonatology",
     "Lactation Support",
     "Vaccination",
   ],
-  worksFor: { "@type": "MedicalClinic", name: NAP.name },
+  worksFor: {
+    "@type": "MedicalClinic",
+    "@id": `${NAP.website}/#clinic`,
+    name: NAP.name,
+  },
   alumniOf: DOCTOR.alumniOf.map((name) => ({
     "@type": "CollegeOrUniversity",
     name,
@@ -62,7 +76,7 @@ const physicianSchema = {
     postalCode: NAP.address.postalCode,
     addressCountry: "IN",
   },
-  telephone: NAP.phone,
+  telephone: NAP.phoneE164,
 };
 
 const faqSchema = {
