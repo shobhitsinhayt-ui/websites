@@ -62,13 +62,27 @@ export default function AboutPreview() {
               {DOCTOR.bio}
             </p>
 
-            {/* TODO placeholders */}
-            <div className="mt-4 rounded-lg border border-gold/20 bg-navy-deep/50 p-4">
-              <p className="font-poppins text-xs text-white/40">
-                TODO: Years of experience, medical-council registration number,
-                prior hospitals / training — to be confirmed by Dr. Aashita.
-              </p>
-            </div>
+            {/* Credential highlights */}
+            <ul className="mt-5 space-y-2">
+              {DOCTOR.highlights.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-2 font-poppins text-xs text-white/80 md:text-sm"
+                >
+                  <span
+                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                    aria-hidden="true"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            {/* Medical-council registration */}
+            <p className="mt-4 font-poppins text-xs text-white/50">
+              Gujarat Medical Council Reg. Nos. — MBBS {DOCTOR.regMbbs} · MD
+              Pediatrics {DOCTOR.regMd}
+            </p>
 
             <a
               href={NAP.whatsapp}

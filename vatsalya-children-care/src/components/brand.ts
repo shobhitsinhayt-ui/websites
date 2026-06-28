@@ -25,7 +25,22 @@ export const DOCTOR = {
   name: "Dr. Aashita A. Sinha",
   credentials: "MBBS · MD Pediatrics",
   roles: "Neonatologist, Pediatrician and Lactation Consultant",
-  bio: "Dr. Aashita A. Sinha is a pediatrician, neonatologist, and certified lactation consultant (MBBS, MD Pediatrics) practising in Sola, Ahmedabad. She cares for children from birth through 18 years, with special focus on newborn care, breastfeeding support, vaccination, and developmental milestones.",
+  bio: "Dr. Aashita A. Sinha is a pediatrician, neonatologist, and certified lactation consultant caring for children from birth through 18 years in Sola, Ahmedabad. She earned her MBBS at GCS Medical College & Hospital, Ahmedabad, and her MD in Pediatrics at SMIMER, Surat. She has served as Senior Resident in Pediatrics at GMERS Medical College & Hospital, Sola, and as Assistant Professor of Pediatrics at BJ Medical College, Ahmedabad. Her training spans high-volume PICU and NICU care, advanced neonatal resuscitation, developmental milestone assessment, vaccination, and adolescent and family counselling.",
+  // Short, scannable credential highlights (verified from CV)
+  highlights: [
+    "MBBS — GCS Medical College & Hospital, Ahmedabad",
+    "MD Pediatrics — SMIMER, Surat",
+    "Senior Resident, Pediatrics — GMERS, Sola, Ahmedabad",
+    "Assistant Professor, Pediatrics — BJ Medical College, Ahmedabad",
+    "Advanced Neonatal Resuscitation (IAP & NNF) · BLS & PALS (IAP)",
+  ],
+  // Gujarat Medical Council registration numbers
+  regMbbs: "G 66578",
+  regMd: "G 35792",
+  alumniOf: [
+    "GCS Medical College & Hospital, Ahmedabad",
+    "Surat Municipal Institute of Medical Education & Research (SMIMER), Surat",
+  ],
 } as const;
 
 export const BRAND = {
@@ -75,6 +90,11 @@ export const FAQ_ITEMS = [
     question: "How do I book an appointment?",
     answer:
       "The fastest way is WhatsApp or a call to +91 90160 39796. Message us and we'll confirm your slot.",
+  },
+  {
+    question: "Do you see walk-in patients, or is it appointment-only?",
+    answer:
+      "Vatsalya Children Care runs by appointment so every child gets unhurried, focused time with Dr. Aashita. Please book through WhatsApp or call +91 90160 39796, and we'll confirm a slot that suits you.",
   },
   {
     question: "What are the clinic's OPD timings?",
