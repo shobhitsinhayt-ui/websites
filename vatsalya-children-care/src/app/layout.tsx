@@ -1,5 +1,5 @@
 // src/app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Alice, Lora, Poppins } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
@@ -87,6 +87,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: NAP.website,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0E2753",
 };
 
 export default function RootLayout({
