@@ -11,7 +11,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <Image src="/logo.png" alt="Vatsalya Children Care" width={36} height={36} />
+              {/* Cream badge so the navy logo stays legible on the dark footer */}
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cream-light shadow-md">
+                <Image src="/logo.png" alt="Vatsalya Children Care" width={32} height={32} className="h-8 w-8" />
+              </span>
               <span className="font-alice text-sm text-white">{NAP.name}</span>
             </div>
             <p className="font-lora text-xs italic text-gold">{BRAND.tagline}</p>
