@@ -25,13 +25,23 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
         {/* Logo + name */}
         <a href="/" aria-label="Vatsalya Children Care — home" className="flex items-center gap-3">
-          <Image
-            src="/logo.svg"
-            alt="Vatsalya Children Care logo"
-            width={44}
-            height={44}
-            priority
-          />
+          {/* Cream badge fades in only while the navbar is transparent over the
+              dark hero, so the navy logo stays legible there. On the cream
+              navbar (scrolled) the badge is transparent — looks unchanged. */}
+          <span
+            className={`flex h-11 w-11 items-center justify-center rounded-full transition-all ${
+              scrolled ? "" : "bg-cream-light shadow-md"
+            }`}
+          >
+            <Image
+              src="/logo.svg"
+              alt="Vatsalya Children Care logo"
+              width={40}
+              height={40}
+              className="h-10 w-10"
+              priority
+            />
+          </span>
           <div className="hidden sm:block">
             <p
               className={`font-alice text-sm font-normal leading-tight transition-colors ${
