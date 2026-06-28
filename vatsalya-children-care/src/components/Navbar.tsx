@@ -33,7 +33,11 @@ export default function Navbar() {
             priority
           />
           <div className="hidden sm:block">
-            <p className="font-alice text-sm font-normal leading-tight text-navy-deep">
+            <p
+              className={`font-alice text-sm font-normal leading-tight transition-colors ${
+                scrolled ? "text-navy-deep" : "text-white"
+              }`}
+            >
               {NAP.name}
             </p>
             <p className="font-lora text-xs italic text-gold">
@@ -43,19 +47,28 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav links */}
-        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-6 text-sm font-medium text-navy">
+        <nav
+          aria-label="Main navigation"
+          className={`hidden md:flex items-center gap-6 text-sm font-medium transition-colors ${
+            scrolled ? "text-navy" : "text-white"
+          }`}
+        >
           <a href="#services" className="hover:text-gold transition-colors">Services</a>
           <a href="#about" className="hover:text-gold transition-colors">About</a>
           <a href="#faq" className="hover:text-gold transition-colors">FAQs</a>
           <a href="#location" className="hover:text-gold transition-colors">Location</a>
         </nav>
 
-        {/* CTA */}
+        {/* CTA — gold pill on the dark hero, navy pill once scrolled onto cream */}
         <a
           href={NAP.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-navy-deep focus:outline-none focus:ring-2 focus:ring-gold sm:text-sm"
+          className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gold sm:text-sm ${
+            scrolled
+              ? "bg-navy text-white hover:bg-navy-deep"
+              : "bg-gold text-navy-deep hover:bg-gold-soft"
+          }`}
         >
           Book Appointment
         </a>
