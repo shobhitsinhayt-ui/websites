@@ -57,15 +57,18 @@ export default function Hero() {
             </span>
           </m.div>
 
-          {/* Logo — mobile only */}
+          {/* Logo — mobile only. Cream badge so the navy logo stays legible on the dark hero. */}
           <m.div variants={fadeUp} className="md:hidden">
-            <Image
-              src="/logo.png"
-              alt="Vatsalya Children Care"
-              width={80}
-              height={80}
-              priority
-            />
+            <span className="flex h-24 w-24 items-center justify-center rounded-full bg-cream-light shadow-lg">
+              <Image
+                src="/logo.png"
+                alt="Vatsalya Children Care"
+                width={80}
+                height={80}
+                className="h-20 w-20"
+                priority
+              />
+            </span>
           </m.div>
 
           {/* H1 */}
