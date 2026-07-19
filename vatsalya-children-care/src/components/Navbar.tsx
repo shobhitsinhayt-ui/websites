@@ -23,31 +23,18 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
-        {/* Logo + name */}
+        {/* Logo + name — dark on the cream hero throughout */}
         <a href="/" aria-label="Vatsalya Children Care — home" className="flex items-center gap-3">
-          {/* Cream badge fades in only while the navbar is transparent over the
-              dark hero, so the navy logo stays legible there. On the cream
-              navbar (scrolled) the badge is transparent — looks unchanged. */}
-          <span
-            className={`flex h-11 w-11 items-center justify-center rounded-full transition-all ${
-              scrolled ? "" : "bg-cream-light shadow-md"
-            }`}
-          >
-            <Image
-              src="/logo.png"
-              alt="Vatsalya Children Care logo"
-              width={40}
-              height={40}
-              className="h-10 w-10"
-              priority
-            />
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Vatsalya Children Care logo"
+            width={40}
+            height={40}
+            className="h-10 w-10"
+            priority
+          />
           <div className="hidden sm:block">
-            <p
-              className={`font-alice text-sm font-normal leading-tight transition-colors ${
-                scrolled ? "text-navy-deep" : "text-white"
-              }`}
-            >
+            <p className="font-alice text-sm font-normal leading-tight text-navy-deep">
               {NAP.name}
             </p>
             <p className="font-lora text-xs italic text-gold">
@@ -59,9 +46,7 @@ export default function Navbar() {
         {/* Desktop nav links */}
         <nav
           aria-label="Main navigation"
-          className={`hidden md:flex items-center gap-6 text-sm font-medium transition-colors ${
-            scrolled ? "text-navy" : "text-white"
-          }`}
+          className="hidden md:flex items-center gap-6 text-sm font-medium text-navy"
         >
           <a href="#services" className="hover:text-gold transition-colors">Services</a>
           <a href="#about" className="hover:text-gold transition-colors">About</a>
@@ -69,16 +54,12 @@ export default function Navbar() {
           <a href="#location" className="hover:text-gold transition-colors">Location</a>
         </nav>
 
-        {/* CTA — gold pill on the dark hero, navy pill once scrolled onto cream */}
+        {/* CTA */}
         <a
           href={NAP.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gold sm:text-sm ${
-            scrolled
-              ? "bg-navy text-white hover:bg-navy-deep"
-              : "bg-gold text-navy-deep hover:bg-gold-soft"
-          }`}
+          className="inline-flex items-center gap-2 rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-navy-deep focus:outline-none focus:ring-2 focus:ring-gold sm:text-sm"
         >
           Book Appointment
         </a>
