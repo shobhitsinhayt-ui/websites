@@ -90,9 +90,16 @@ export default function ServicesGrid() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="bg-cream-light py-16 md:py-24"
+      className="relative overflow-hidden bg-cream-light py-16 md:py-24"
     >
-      <div className="mx-auto max-w-6xl px-4 md:px-8">
+      {/* Soft gradient blobs so the frosted-glass tiles read with depth */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-16 left-6 h-64 w-64 rounded-full bg-gold/20 blur-3xl" />
+        <div className="absolute bottom-0 right-4 h-72 w-72 rounded-full bg-[#7FB0AC]/25 blur-3xl" />
+        <div className="absolute top-1/3 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-navy/10 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-4 md:px-8">
         {/* Section header */}
         <div className="mb-12 text-center">
           <m.div
@@ -137,8 +144,10 @@ export default function ServicesGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.04 }}
-                className={`overflow-hidden rounded-2xl border bg-cream transition-colors duration-300 ${
-                  open ? "border-gold/50 shadow-lg shadow-gold/5" : "border-gold/20 hover:border-gold/40"
+                className={`overflow-hidden rounded-2xl border backdrop-blur-md transition-colors duration-300 ${
+                  open
+                    ? "border-white/70 bg-white/70 shadow-xl shadow-navy/5"
+                    : "border-white/50 bg-white/40 hover:border-white/70 hover:bg-white/55"
                 }`}
               >
                 <button
