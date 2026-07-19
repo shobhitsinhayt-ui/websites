@@ -71,6 +71,28 @@ export default function WhyVatsalya() {
             breastfeeding support antenatally, postnatally, and via teleconsultation.
           </p>
         </m.div>
+
+        {/* How we stand out */}
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {COPY.whyVatsalya.differentiators.map((d, i) => (
+            <m.div
+              key={d.title}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: i * 0.1 }}
+              className="rounded-2xl border border-gold/20 bg-cream-light p-5"
+            >
+              <div className="mb-3 h-0.5 w-8 bg-gold" aria-hidden="true" />
+              <h3 className="font-alice text-base text-navy-deep mb-2">
+                {d.title}
+              </h3>
+              <p className="font-poppins text-sm leading-relaxed text-ink/80">
+                {d.body}
+              </p>
+            </m.div>
+          ))}
+        </div>
       </div>
     </section>
   );

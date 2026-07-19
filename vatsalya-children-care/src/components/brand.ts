@@ -33,12 +33,17 @@ export const DOCTOR = {
   credentials: "MBBS · MD Pediatrics",
   roles: "Neonatologist, Pediatrician and Lactation Consultant",
   bio: "Dr. Aashita A. Sinha is a pediatrician, neonatologist, and certified lactation consultant caring for children from birth through 18 years in Sola, Ahmedabad. She earned her MBBS at GCS Medical College & Hospital, Ahmedabad, and her MD in Pediatrics at SMIMER, Surat. She has served as Senior Resident in Pediatrics at GMERS Medical College & Hospital, Sola, and as Assistant Professor of Pediatrics at BJ Medical College, Ahmedabad. Her training spans high-volume PICU and NICU care, advanced neonatal resuscitation, developmental milestone assessment, vaccination, and adolescent and family counselling.",
+  // Mission statement (clinic-approved, from the welcome brief)
+  quote:
+    "My mission is to blend advanced, evidence-based medical expertise with a warm, gentle approach so that both children and parents feel safe, understood, and confident during every consultation.",
   // Short, scannable credential highlights (verified from CV)
   highlights: [
     "MBBS — GCS Medical College & Hospital, Ahmedabad",
     "MD Pediatrics — SMIMER, Surat",
     "Senior Resident, Pediatrics — GMERS, Sola, Ahmedabad",
     "Assistant Professor, Pediatrics — BJ Medical College, Ahmedabad",
+    "2nd Prize, Best Paper — GUJ-PEDICON · IJP Best Thesis nominee",
+    "Published in the International Journal of Contemporary Pediatrics",
     "Advanced Neonatal Resuscitation (IAP & NNF) · BLS & PALS (IAP)",
   ],
   // Gujarat Medical Council registration numbers
@@ -49,6 +54,46 @@ export const DOCTOR = {
     "Surat Municipal Institute of Medical Education & Research (SMIMER), Surat",
   ],
   languages: ["English", "Hindi", "Gujarati"],
+} as const;
+
+// OPD timings — confirmed by the clinic.
+export const HOURS = {
+  // Human-readable rows for the Location section
+  display: [
+    {
+      days: "Monday – Saturday",
+      sessions: "9:00 AM – 1:00 PM  ·  4:30 PM – 7:30 PM",
+    },
+    { days: "Sunday", sessions: "9:00 AM – 12:00 PM" },
+  ],
+  // Structured for schema.org openingHoursSpecification
+  spec: [
+    {
+      days: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "09:00",
+      closes: "13:00",
+    },
+    {
+      days: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "16:30",
+      closes: "19:30",
+    },
+    { days: ["Sunday"], opens: "09:00", closes: "12:00" },
+  ],
 } as const;
 
 export const BRAND = {
@@ -67,6 +112,20 @@ export const COPY = {
   },
   whyVatsalya: {
     heading: "Why Vatsalya?",
+    differentiators: [
+      {
+        title: "Dual Expertise in Pediatrics & Lactation",
+        body: "Beyond routine checkups, Dr. Aashita offers specialised antenatal and postnatal lactation consultations to help mothers navigate breastfeeding with confidence.",
+      },
+      {
+        title: "Child-Friendly OPD Environment",
+        body: "A warm, playful, non-intimidating clinic designed to turn routine visits into calm, positive experiences for your little ones.",
+      },
+      {
+        title: "A Partnership with Parents",
+        body: "We listen, explain, and build a care plan together — because you are the true expert on your child.",
+      },
+    ],
     paragraphs: [
       "When you step into Vatsalya, your family becomes our primary focus. We are deeply committed to nurturing health and ensuring smiles for every child, safeguarding their physical, emotional, and social development from infancy through adolescence.",
       "We recognise that parents are the true experts on their children. By working closely with you, we get to know your child's unique history so we can support and guide you through every milestone with clarity and confidence.",
@@ -107,7 +166,7 @@ export const FAQ_ITEMS = [
   {
     question: "What are the clinic's OPD timings?",
     answer:
-      "For current OPD days and timings, please WhatsApp or call us at +91 90160 39796 and we'll share the next available session that suits you.",
+      "Our OPD is open Monday to Saturday from 9:00 AM to 1:00 PM and 4:30 PM to 7:30 PM, and on Sunday from 9:00 AM to 12:00 PM. To avoid waiting, please book on WhatsApp or call +91 90160 39796.",
   },
   {
     question:

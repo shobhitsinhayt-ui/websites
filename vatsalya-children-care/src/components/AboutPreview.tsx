@@ -1,6 +1,7 @@
 // src/components/AboutPreview.tsx
 "use client";
 
+import Image from "next/image";
 import { m } from "framer-motion";
 import { DOCTOR, NAP } from "./brand";
 
@@ -31,15 +32,16 @@ export default function AboutPreview() {
             transition={{ duration: 0.6 }}
             className="flex justify-center"
           >
-            <div className="relative h-72 w-56 rounded-2xl border-2 border-gold/30 bg-navy-deep flex flex-col items-center justify-center gap-3 md:h-80 md:w-64">
-              <span className="text-4xl" aria-hidden="true">👩‍⚕️</span>
-              {/* TODO(internal): replace this placeholder with a professional photo of Dr. Aashita A. Sinha */}
-              <p className="font-alice text-sm text-white/70 text-center px-4">
-                {DOCTOR.name}
-              </p>
-              <p className="font-lora text-xs italic text-gold/70 text-center px-4">
-                {DOCTOR.credentials}
-              </p>
+            {/* Fixed 2:3 frame + object-cover: photo never stretches or squishes */}
+            <div className="relative aspect-[2/3] w-56 overflow-hidden rounded-2xl border-2 border-gold/30 bg-navy-deep shadow-xl md:w-64">
+              <Image
+                src="/dr-aashita.jpg"
+                alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
+                fill
+                sizes="(max-width: 768px) 224px, 256px"
+                className="object-cover object-top"
+                priority
+              />
               <div className="absolute -bottom-4 -right-4 h-8 w-8 border-b-2 border-r-2 border-gold opacity-60" aria-hidden="true" />
             </div>
           </m.div>
@@ -61,6 +63,12 @@ export default function AboutPreview() {
             <p className="font-lora text-sm italic text-gold mb-6">
               {DOCTOR.credentials} · {DOCTOR.roles}
             </p>
+
+            {/* Mission quote */}
+            <blockquote className="mb-6 border-l-2 border-gold/50 pl-4 font-lora text-base italic leading-relaxed text-white/90">
+              &ldquo;{DOCTOR.quote}&rdquo;
+            </blockquote>
+
             <p className="font-poppins text-sm leading-relaxed text-white/80 md:text-base">
               {DOCTOR.bio}
             </p>
