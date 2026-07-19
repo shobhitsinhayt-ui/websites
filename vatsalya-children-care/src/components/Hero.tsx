@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { m, type Variants } from "framer-motion";
-import { Phone, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { NAP, COPY, DOCTOR } from "./brand";
 
 const fadeUp: Variants = {
@@ -76,29 +76,18 @@ export default function Hero() {
               {DOCTOR.name} · {DOCTOR.credentials} · {DOCTOR.roles}
             </m.p>
 
-            {/* CTAs — clean Medio-style pill + a plain call link */}
-            <m.div
-              variants={fadeUp}
-              className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
-            >
+            {/* CTA — single clean Medio-style pill */}
+            <m.div variants={fadeUp} className="mt-8">
               <a
                 href={NAP.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 rounded-full bg-navy py-1.5 pl-6 pr-1.5 font-poppins text-sm font-semibold text-white shadow-md transition-colors hover:bg-navy-deep focus:outline-none focus:ring-4 focus:ring-navy/20"
               >
-                Book Appointment on WhatsApp
+                Book Appointment
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold text-navy transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </span>
-              </a>
-
-              <a
-                href={NAP.phoneTel}
-                className="inline-flex items-center gap-2 font-poppins text-sm font-semibold text-navy transition-colors hover:text-gold"
-              >
-                <Phone className="h-4 w-4 text-gold" aria-hidden="true" />
-                {COPY.hero.secondaryCTA}
               </a>
             </m.div>
           </m.div>

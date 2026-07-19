@@ -20,12 +20,13 @@ export const NAP = {
     country: "India",
     full: "509, B-Wing, 5th Floor, Grace Business Park, Sangeet Cross Roads, Near Shaleen Hospital, Above Reliance SMART Bazaar, Kargil Petrol Pump Road, Sola, Ahmedabad, Gujarat – 380060, India",
   },
-  // Exact Google Maps place (decoded from the clinic's Maps feature ID) —
+  // Exact Google Maps place (from the clinic's verified Google listing) —
   // opens the right pin in the user's Google Maps app/site.
-  mapsUrl: "https://www.google.com/maps?cid=9088339190125086181",
-  // Clean, geocodable query for the no-API-key embed iframe.
-  mapsQuery:
-    "Grace Business Park, Sangeet Cross Roads, Sola, Ahmedabad, Gujarat 380060",
+  mapsUrl: "https://www.google.com/maps?cid=12905434918347711156",
+  // Precise coordinates — used for the no-API-key embed pin.
+  mapsQuery: "23.077333,72.5189114",
+  // Verified GPS coordinates (for schema.org geo).
+  geo: { lat: "23.077333", lng: "72.5189114" },
 } as const;
 
 export const DOCTOR = {

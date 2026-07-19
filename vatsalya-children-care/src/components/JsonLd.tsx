@@ -27,6 +27,11 @@ const clinicSchema = {
     addressCountry: "IN",
   },
   hasMap: NAP.mapsUrl,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: NAP.geo.lat,
+    longitude: NAP.geo.lng,
+  },
   employee: { "@id": `${NAP.website}/#physician` },
   openingHoursSpecification: HOURS.spec.map((s) => ({
     "@type": "OpeningHoursSpecification",
@@ -34,7 +39,6 @@ const clinicSchema = {
     opens: s.opens,
     closes: s.closes,
   })),
-  // geo (lat/long) intentionally omitted until exact coordinates are confirmed.
   sameAs: [NAP.instagram],
 };
 
