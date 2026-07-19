@@ -44,6 +44,7 @@ const physicianSchema = {
   "@id": `${NAP.website}/#physician`,
   name: DOCTOR.name,
   url: NAP.website,
+  image: `${NAP.website}/dr-aashita.jpg`,
   description: DOCTOR.bio,
   medicalSpecialty: "Pediatrics",
   knowsLanguage: DOCTOR.languages,
