@@ -1,7 +1,8 @@
 // src/components/ServicesGrid.tsx
 "use client";
 
-import { m, type Variants } from "framer-motion";
+import { useState } from "react";
+import { m, AnimatePresence } from "framer-motion";
 import {
   Stethoscope,
   Shield,
@@ -12,6 +13,7 @@ import {
   Apple,
   Users,
   Video,
+  Plus,
 } from "lucide-react";
 
 const SERVICES = [
@@ -80,12 +82,10 @@ const SERVICES = [
   },
 ];
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
-};
-
 export default function ServicesGrid() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+
   return (
     <section
       id="services"
@@ -125,42 +125,70 @@ export default function ServicesGrid() {
           </m.p>
         </div>
 
-        {/* 3-column grid on desktop, 1 column on mobile */}
-        <m.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ staggerChildren: 0.07 }}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {SERVICES.map((service) => {
+        {/* Interactive list — tap a service to expand its details */}
+        <div className="mx-auto max-w-3xl space-y-3">
+          {SERVICES.map((service, i) => {
             const Icon = service.icon;
+            const open = openIndex === i;
             return (
-              <m.article
+              <m.div
                 key={service.title}
-                variants={cardVariants}
-                className="group rounded-2xl border border-gold/20 bg-cream p-6 transition-shadow hover:shadow-md hover:shadow-gold/10"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: i * 0.04 }}
+                className={`overflow-hidden rounded-2xl border bg-cream transition-colors duration-300 ${
+                  open ? "border-gold/50 shadow-lg shadow-gold/5" : "border-gold/20 hover:border-gold/40"
+                }`}
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy/5 group-hover:bg-navy/10 transition-colors">
-                  <Icon
-                    className="h-6 w-6 text-navy"
+                <button
+                  type="button"
+                  onClick={() => toggle(i)}
+                  aria-expanded={open}
+                  className="flex w-full items-center gap-4 px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold"
+                >
+                  <span
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
+                      open ? "bg-gold text-navy" : "bg-navy/5 text-navy"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={1.5} />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-alice text-lg leading-tight text-navy-deep">
+                      {service.title}
+                    </span>
+                    <span className="block font-lora text-xs italic text-gold">
+                      {service.subtitle}
+                    </span>
+                  </span>
+                  <Plus
+                    className={`h-5 w-5 shrink-0 text-gold transition-transform duration-300 ${
+                      open ? "rotate-45" : ""
+                    }`}
                     aria-hidden="true"
-                    strokeWidth={1.5}
                   />
-                </div>
-                <h3 className="font-alice text-lg text-navy-deep mb-1">
-                  {service.title}
-                </h3>
-                <p className="font-lora text-xs italic text-gold mb-3">
-                  {service.subtitle}
-                </p>
-                <p className="font-poppins text-sm leading-relaxed text-ink/80">
-                  {service.description}
-                </p>
-              </m.article>
+                </button>
+                <AnimatePresence initial={false}>
+                  {open && (
+                    <m.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-5 pb-5 pl-20 font-poppins text-sm leading-relaxed text-ink/80">
+                        {service.description}
+                      </p>
+                    </m.div>
+                  )}
+                </AnimatePresence>
+              </m.div>
             );
           })}
-        </m.div>
+        </div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 
 import { m, type Variants } from "framer-motion";
 import { COPY } from "./brand";
+import ScrollRevealText from "./ScrollRevealText";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -38,21 +39,12 @@ export default function WhyVatsalya() {
           {COPY.whyVatsalya.heading}
         </m.h2>
 
-        <div className="space-y-5">
-          {COPY.whyVatsalya.paragraphs.map((para, i) => (
-            <m.p
-              key={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: i * 0.1 }}
-              className="font-poppins text-base leading-relaxed text-ink md:text-lg"
-            >
-              {para}
-            </m.p>
-          ))}
-        </div>
+        {/* Scroll-linked word reveal: text fills from faint to solid as you scroll */}
+        <ScrollRevealText
+          paragraphs={COPY.whyVatsalya.paragraphs}
+          className="space-y-5"
+          paragraphClassName="font-poppins text-xl leading-relaxed text-navy-deep md:text-2xl"
+        />
 
         {/* Differentiator callout */}
         <m.div
@@ -81,10 +73,11 @@ export default function WhyVatsalya() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
-              className="rounded-2xl border border-gold/20 bg-cream-light p-5"
+              whileHover={{ y: -6 }}
+              className="group rounded-2xl border border-gold/20 bg-cream-light p-5 transition-shadow duration-300 hover:border-gold/50 hover:shadow-xl hover:shadow-gold/10"
             >
-              <div className="mb-3 h-0.5 w-8 bg-gold" aria-hidden="true" />
-              <h3 className="font-alice text-base text-navy-deep mb-2">
+              <div className="mb-3 h-0.5 w-8 bg-gold transition-all duration-300 group-hover:w-14" aria-hidden="true" />
+              <h3 className="font-alice text-base text-navy-deep mb-2 transition-colors group-hover:text-navy">
                 {d.title}
               </h3>
               <p className="font-poppins text-sm leading-relaxed text-ink/80">
