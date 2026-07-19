@@ -139,11 +139,12 @@ export default function ServicesGrid() {
               <m.article
                 key={service.title}
                 variants={cardVariants}
-                className="group rounded-2xl border border-gold/20 bg-cream p-6 transition-shadow hover:shadow-md hover:shadow-gold/10"
+                whileHover={{ y: -6 }}
+                className="group rounded-2xl border border-gold/20 bg-cream p-6 transition-all duration-300 hover:border-gold/50 hover:shadow-xl hover:shadow-gold/10"
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy/5 group-hover:bg-navy/10 transition-colors">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy/5 transition-colors duration-300 group-hover:bg-gold group-hover:text-navy">
                   <Icon
-                    className="h-6 w-6 text-navy"
+                    className="h-6 w-6 text-navy transition-colors duration-300 group-hover:text-navy"
                     aria-hidden="true"
                     strokeWidth={1.5}
                   />
