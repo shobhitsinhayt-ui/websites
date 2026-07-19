@@ -3,7 +3,7 @@
 
 import { m } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { NAP } from "./brand";
+import { NAP, HOURS } from "./brand";
 
 export default function LocationSection() {
   return (
@@ -73,13 +73,14 @@ export default function LocationSection() {
                 <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-navy mb-1">
                   OPD Timings
                 </p>
-                <p className="font-poppins text-sm text-ink/70">
-                  WhatsApp or call{" "}
-                  <a href={NAP.phoneTel} className="font-medium text-navy hover:text-gold transition-colors">
-                    {NAP.phone}
-                  </a>{" "}
-                  for current OPD days &amp; timings.
-                </p>
+                <dl className="font-poppins text-sm text-ink">
+                  {HOURS.display.map((row) => (
+                    <div key={row.days} className="mb-1">
+                      <dt className="font-medium text-navy">{row.days}</dt>
+                      <dd className="text-ink/70">{row.sessions}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             </div>
 

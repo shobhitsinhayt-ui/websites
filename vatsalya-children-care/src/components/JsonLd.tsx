@@ -2,7 +2,7 @@
 // Injects JSON-LD structured data as <script> tags in <head>.
 // Three blocks: MedicalClinic+LocalBusiness, Physician, FAQPage.
 
-import { NAP, DOCTOR, FAQ_ITEMS } from "./brand";
+import { NAP, DOCTOR, FAQ_ITEMS, HOURS } from "./brand";
 
 const clinicSchema = {
   "@context": "https://schema.org",
@@ -28,8 +28,13 @@ const clinicSchema = {
   },
   hasMap: NAP.mapsUrl,
   employee: { "@id": `${NAP.website}/#physician` },
-  // geo (lat/long) and openingHours intentionally omitted until confirmed —
-  // shipping placeholder values would make the structured data invalid.
+  openingHoursSpecification: HOURS.spec.map((s) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: s.days,
+    opens: s.opens,
+    closes: s.closes,
+  })),
+  // geo (lat/long) intentionally omitted until exact coordinates are confirmed.
   sameAs: [NAP.instagram],
 };
 
