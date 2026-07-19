@@ -23,6 +23,15 @@ const config: Config = {
         lora: ["var(--font-lora)", "Georgia", "serif"],
         poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 28s linear infinite",
+      },
     },
   },
   plugins: [],
