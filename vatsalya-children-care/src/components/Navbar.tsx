@@ -8,10 +8,10 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, m } from "framer-motion";
 
 const LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "FAQs", href: "#faq" },
-  { label: "Location", href: "#location" },
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
+  { label: "FAQs", href: "/#faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
