@@ -2,82 +2,155 @@
 import Image from "next/image";
 import { NAP, BRAND } from "./brand";
 
+function GroupLabel({ children }: { children: string }) {
+  return (
+    <p className="mb-4 font-poppins text-xs font-semibold uppercase tracking-[0.15em] text-gold">
+      ( {children} )
+    </p>
+  );
+}
+
 export default function Footer() {
   const year = new Date().getFullYear();
+
+  const quickLinks = [
+    { label: "Services", href: "#services" },
+    { label: "About Dr. Aashita", href: "#doctor" },
+    { label: "FAQs", href: "#faq" },
+    { label: "Location", href: "#location" },
+  ];
+
   return (
-    <footer className="bg-navy-deep py-10 md:py-12" aria-label="Footer">
+    <footer
+      className="relative overflow-hidden bg-cream-light pt-16 md:pt-20"
+      aria-label="Footer"
+    >
       <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {/* Top: brand + columns */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           {/* Brand */}
-          <div className="flex flex-col gap-3">
+          <div className="md:col-span-4">
             <div className="flex items-center gap-3">
-              {/* Cream badge so the navy logo stays legible on the dark footer */}
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cream-light shadow-md">
-                <Image src="/logo.png" alt="Vatsalya Children Care" width={32} height={32} className="h-8 w-8" />
-              </span>
-              <span className="font-alice text-sm text-white">{NAP.name}</span>
+              <Image
+                src="/logo.png"
+                alt="Vatsalya Children Care"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
+              <span className="font-alice text-lg text-navy-deep">{NAP.name}</span>
             </div>
-            <p className="font-lora text-xs italic text-gold">{BRAND.tagline}</p>
-            <p className="font-poppins text-xs text-white/50 leading-relaxed">
+            <p className="mt-3 font-lora text-sm italic text-gold">
+              {BRAND.tagline}
+            </p>
+            <p className="mt-3 max-w-xs font-poppins text-xs leading-relaxed text-ink/60">
               {BRAND.meaning}
             </p>
           </div>
 
-          {/* NAP */}
-          <div>
-            <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold mb-3">
-              Contact
-            </p>
-            <address className="not-italic space-y-2 font-poppins text-xs text-white/70 leading-relaxed">
-              <p>{NAP.address.full}</p>
+          {/* Quick links */}
+          <nav aria-label="Footer navigation" className="md:col-span-3">
+            <GroupLabel>Explore</GroupLabel>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="font-poppins text-sm text-ink/70 transition-colors hover:text-gold"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <GroupLabel>Contact</GroupLabel>
+            <address className="space-y-2.5 not-italic">
+              <p className="font-poppins text-sm leading-relaxed text-ink/70">
+                {NAP.address.full}
+              </p>
               <p>
-                <a href={NAP.phoneTel} className="hover:text-gold transition-colors">
+                <a
+                  href={NAP.phoneTel}
+                  className="font-poppins text-sm text-ink/70 transition-colors hover:text-gold"
+                >
                   {NAP.phone}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${NAP.email}`} className="hover:text-gold transition-colors">
+                <a
+                  href={`mailto:${NAP.email}`}
+                  className="font-poppins text-sm text-ink/70 transition-colors hover:text-gold"
+                >
                   {NAP.email}
                 </a>
               </p>
             </address>
           </div>
 
-          {/* Links */}
-          <div>
-            <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold mb-3">
-              Quick Links
-            </p>
-            <nav aria-label="Footer navigation" className="space-y-2">
-              {[
-                { label: "Services", href: "#services" },
-                { label: "About Dr. Aashita", href: "#doctor" },
-                { label: "FAQs", href: "#faq" },
-                { label: "Location", href: "#location" },
-                { label: "Instagram", href: NAP.instagram, external: true },
-              ].map((link) => (
+          {/* Socials */}
+          <div className="md:col-span-2">
+            <GroupLabel>Connect</GroupLabel>
+            <ul className="space-y-2.5">
+              <li>
                 <a
-                  key={link.href}
-                  href={link.href}
-                  target={link.external ? "_blank" : undefined}
-                  rel={link.external ? "noopener noreferrer" : undefined}
-                  className="block font-poppins text-xs text-white/60 hover:text-gold transition-colors"
+                  href={NAP.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-poppins text-sm text-ink/70 transition-colors hover:text-gold"
                 >
-                  {link.label}
+                  Instagram
                 </a>
-              ))}
-            </nav>
+              </li>
+              <li>
+                <a
+                  href={NAP.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-poppins text-sm text-ink/70 transition-colors hover:text-gold"
+                >
+                  Google Maps
+                </a>
+              </li>
+              <li>
+                <a
+                  href={NAP.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-poppins text-sm text-ink/70 transition-colors hover:text-gold"
+                >
+                  WhatsApp
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center">
-          <p className="font-poppins text-xs text-white/40">
-            © {year} {NAP.name} · All rights reserved ·{" "}
-            <a href={NAP.website} className="hover:text-gold transition-colors">
-              {NAP.website}
-            </a>
+        {/* Copyright */}
+        <div className="mt-14 flex flex-col items-center justify-between gap-2 border-t border-navy/10 pt-6 sm:flex-row">
+          <p className="font-poppins text-xs text-ink/50">
+            © {year} {NAP.name} · All rights reserved
           </p>
+          <a
+            href={NAP.website}
+            className="font-poppins text-xs text-ink/50 transition-colors hover:text-gold"
+          >
+            vatsalyachildrencare.in
+          </a>
         </div>
+      </div>
+
+      {/* Giant brand wordmark */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none mt-6 select-none text-center leading-none"
+      >
+        <span className="font-alice text-[24vw] leading-[0.8] tracking-tight text-navy-deep/90 md:text-[18vw]">
+          Vatsalya<span className="text-gold">.</span>
+        </span>
       </div>
     </footer>
   );
