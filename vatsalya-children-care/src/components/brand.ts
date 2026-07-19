@@ -12,13 +12,14 @@ export const NAP = {
   instagram: "https://www.instagram.com/vatsalyachildrencare",
   website: "https://vatsalyachildrencare.in",
   address: {
+    // Matches Google Business Profile exactly (critical for local-SEO NAP consistency)
     street:
-      "509, B-Wing, 5th Floor, Grace Business Park, Sangeet Cross Roads, Near Shaleen Hospital, Above Reliance SMART Bazaar, Kargil Petrol Pump Road, Sola",
+      "5th Floor, Kargil Petrol Pump Road, Grace Business Park Sagar, 509 B-Wing, above Reliance SMART Bazaar, Science City",
     city: "Ahmedabad",
     state: "Gujarat",
     postalCode: "380060",
     country: "India",
-    full: "509, B-Wing, 5th Floor, Grace Business Park, Sangeet Cross Roads, Near Shaleen Hospital, Above Reliance SMART Bazaar, Kargil Petrol Pump Road, Sola, Ahmedabad, Gujarat – 380060, India",
+    full: "5th Floor, Kargil Petrol Pump Road, Grace Business Park Sagar, 509 B-Wing, above Reliance SMART Bazaar, Science City, Ahmedabad, Gujarat 380060, India",
   },
   // Exact Google Maps place (from the clinic's verified Google listing) —
   // opens the right pin in the user's Google Maps app/site.
@@ -152,7 +153,7 @@ export const FAQ_ITEMS = [
   {
     question: "Where is the clinic located?",
     answer:
-      "509, B-Wing, 5th Floor, Grace Business Park, Sangeet Cross Roads, near Shaleen Hospital and above Reliance SMART Bazaar, on Kargil Petrol Pump Road, Sola, Ahmedabad – 380060. We're close to Science City and the Gujarat High Court.",
+      "5th Floor, Grace Business Park Sagar, 509 B-Wing, above Reliance SMART Bazaar, on Kargil Petrol Pump Road, Science City, Ahmedabad, Gujarat 380060. We're close to Science City and the Gujarat High Court.",
   },
   {
     question: "How do I book an appointment?",
