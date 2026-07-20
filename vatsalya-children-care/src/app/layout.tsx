@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Vatsalya Children Care",
   },
   description:
-    "Vatsalya Children Care — expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant). Vaccination, newborn care, breastfeeding support for children 0–18 years. Book on WhatsApp: +91 90160 39796.",
+    "Vatsalya Children Care, expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant). Vaccination, newborn care, breastfeeding support for children 0 to 18 years. Book on WhatsApp: +91 90160 39796.",
   metadataBase: new URL(NAP.website),
   keywords: [
     "best pediatrician in Ahmedabad",
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     title:
       "Best Pediatrician in Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
     description:
-      "Expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha — MD Pediatrics, Neonatologist & Lactation Consultant. Book on WhatsApp.",
+      "Expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha, MD Pediatrics, Neonatologist & Lactation Consultant. Book on WhatsApp.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Vatsalya Children Care — Nurturing Smiles, Ensuring Health",
+        alt: "Vatsalya Children Care, Nurturing Smiles, Ensuring Health",
       },
     ],
   },
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title:
       "Best Pediatrician in Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
     description:
-      "Expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha — MD Pediatrics, Neonatologist & Lactation Consultant.",
+      "Expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha, MD Pediatrics, Neonatologist & Lactation Consultant.",
     images: ["/og-image.png"],
   },
   icons: {
