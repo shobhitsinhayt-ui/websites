@@ -4,7 +4,6 @@
 import Image from "next/image";
 import { m } from "framer-motion";
 import { DOCTOR, NAP } from "./brand";
-import PhotoDecor from "./PhotoDecor";
 
 export default function AboutPreview() {
   return (
@@ -35,8 +34,7 @@ export default function AboutPreview() {
           >
             {/* Fixed 2:3 frame + object-cover: photo never stretches or squishes */}
             <div className="relative w-56 md:w-64">
-              <PhotoDecor variant="dark" />
-              <div className="relative z-10 aspect-[2/3] w-full overflow-hidden rounded-lg border-2 border-gold/30 bg-navy-deep shadow-xl">
+              <div className="relative aspect-[2/3] w-full overflow-hidden rounded-lg border-2 border-gold/30 bg-navy-deep shadow-xl">
                 <Image
                   src="/dr-aashita.jpg"
                   alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
@@ -46,6 +44,15 @@ export default function AboutPreview() {
                   priority
                 />
               </div>
+              {/* Gold corner-frame accents */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -left-3 -top-3 h-14 w-14 border-l-2 border-t-2 border-gold/60"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-3 -right-3 h-14 w-14 border-b-2 border-r-2 border-gold/60"
+              />
             </div>
           </m.div>
 
