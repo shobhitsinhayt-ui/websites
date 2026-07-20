@@ -5,7 +5,6 @@ import Image from "next/image";
 import { m, type Variants } from "framer-motion";
 import { ArrowUpRight, BadgeCheck } from "lucide-react";
 import { NAP, COPY, DOCTOR } from "./brand";
-import PhotoDecor from "./PhotoDecor";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -100,8 +99,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative order-1 mx-auto w-full max-w-md md:order-2"
           >
-            <PhotoDecor variant="light" />
-            <div className="relative z-10 aspect-[4/5] w-full overflow-hidden rounded-lg border border-gold/30 bg-cream-light shadow-xl">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-gold/30 bg-cream-light shadow-xl">
               <Image
                 src="/dr-aashita.jpg"
                 alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
@@ -111,6 +109,15 @@ export default function Hero() {
                 priority
               />
             </div>
+            {/* Gold corner-frame accents */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-3 -top-3 h-16 w-16 border-l-2 border-t-2 border-gold/60"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-3 -right-3 h-16 w-16 border-b-2 border-r-2 border-gold/60"
+            />
             {/* Floating doctor badge */}
             <div className="absolute -bottom-5 left-4 z-30 flex items-center gap-3 rounded-lg border border-gold/30 bg-cream-light px-4 py-3 shadow-xl md:left-6">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy text-gold">
