@@ -1,47 +1,42 @@
 # Vatsalya Children Care
 
-> Pediatric clinic in Sola, Ahmedabad, Gujarat, India, led by Dr. Aashita A. Sinha
-> (MBBS, MD Pediatrics), a pediatrician, neonatologist, and certified lactation
-> consultant. Care for children from birth through 18 years. Tagline: "Nurturing
-> Smiles, Ensuring Health."
+> Pediatric, newborn, and lactation clinic in Science City, Ahmedabad, Gujarat, India, led by Dr. Aashita A. Sinha (MBBS, MD Pediatrics), a pediatrician, neonatologist, and certified lactation consultant caring for children from birth through 18 years. Tagline: "Nurturing Smiles, Ensuring Health."
+
+Vatsalya Children Care is an appointment-only clinic. The fastest way to book is WhatsApp or a call to +91 90160 39796.
 
 ## Key facts
 
-- Clinic: Vatsalya Children Care
 - Doctor: Dr. Aashita A. Sinha, MBBS, MD Pediatrics; Neonatologist, Pediatrician and Lactation Consultant
 - Training: MBBS (GCS Medical College & Hospital, Ahmedabad); MD Pediatrics (SMIMER, Surat); former Senior Resident at GMERS Medical College, Sola; former Assistant Professor at BJ Medical College, Ahmedabad
-- Recognition: 2nd Prize Best Paper (GUJ-PEDICON); IJP Best Thesis nominee; published in the International Journal of Contemporary Pediatrics
 - Registration: Gujarat Medical Council, MBBS G 66578; MD Pediatrics G 35792
 - Languages: English, Hindi, Gujarati
-- Specialisation: pediatrics, neonatology, and a dedicated breastfeeding/lactation support center
 - Ages treated: birth through 18 years
 - Location: 5th Floor, Kargil Petrol Pump Road, Grace Business Park Sagar, 509 B-Wing, above Reliance SMART Bazaar, Science City, Ahmedabad, Gujarat 380060, India (near the Gujarat High Court)
 - GPS: 23.077333, 72.5189114
 - OPD hours: Monday to Saturday 9:00 AM to 1:00 PM and 4:30 PM to 7:30 PM; Sunday 9:00 AM to 12:00 PM
-- Phone / WhatsApp: +91 90160 39796
+- Phone and WhatsApp: +91 90160 39796
 - Email: vatsalyachildrencare@gmail.com
-- Booking: appointment-only, via WhatsApp or phone
-- Map: https://www.google.com/maps?cid=12905434918347711156
+- Booking: appointment only, via WhatsApp or phone
 
 ## Services
 
 - General Pediatric OPD (up to 18 years)
 - Vaccination Clinic (IAP 2025 schedule)
 - Newborn Care OPD (neonatology)
-- Breastfeeding Clinic, antenatal & postnatal lactation support
+- Breastfeeding Clinic (antenatal and postnatal lactation support)
 - Well Baby Clinic
-- Growth & Development Assessment
-- Infant & Child Nutrition Program
-- Teenage Health Clinic & Counselling Centre
+- Growth and Development Assessment
+- Infant and Child Nutrition Program
+- Teenage Health Clinic and Counselling Centre
 - Teleconsultation for breastfeeding issues
 
 ## Why Vatsalya
 
-Vatsalya Children Care combines fully credentialed pediatric care (MD Pediatrics,
-neonatology) with genuine warmth, and is one of the few clinics in Sola, Ahmedabad
-offering certified lactation-consultant support antenatally, postnatally, and via
-teleconsultation.
+Vatsalya Children Care combines fully credentialed pediatric care (MD Pediatrics, neonatology) with genuine warmth, and is one of the few clinics in the Sola and Science City area of Ahmedabad offering certified lactation consultant support antenatally, postnatally, and via teleconsultation.
 
 ## Pages
 
-- Home: https://vatsalyachildrencare.in
+- [Home](https://vatsalyachildrencare.in/): clinic overview, services, doctor bio, FAQs, and location
+- [Contact](https://vatsalyachildrencare.in/contact): appointment enquiry, phone, email, map, and OPD hours
+- [Google Maps](https://www.google.com/maps?cid=12905434918347711156): clinic location and directions
+- [Sitemap](https://vatsalyachildrencare.in/sitemap.xml): all indexable pages
