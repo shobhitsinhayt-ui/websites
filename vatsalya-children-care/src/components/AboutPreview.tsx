@@ -33,7 +33,7 @@ export default function AboutPreview() {
             className="flex justify-center"
           >
             {/* Fixed 2:3 frame + object-cover: photo never stretches or squishes */}
-            <div className="relative aspect-[2/3] w-56 overflow-hidden rounded-2xl border-2 border-gold/30 bg-navy-deep shadow-xl md:w-64">
+            <div className="relative aspect-[2/3] w-56 overflow-hidden rounded-lg border-2 border-gold/30 bg-navy-deep shadow-xl md:w-64">
               <Image
                 src="/dr-aashita.jpg"
                 alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
