@@ -18,24 +18,20 @@ export default function FAQAccordion() {
       className="bg-cream py-16 md:py-24"
     >
       <div className="mx-auto max-w-3xl px-4 md:px-8">
-        <div className="mb-12 text-center">
-          <m.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="mx-auto mb-4 h-0.5 w-12 bg-gold"
-            aria-hidden="true"
-          />
+        <div className="mb-10 md:mb-12">
+          <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            FAQ
+          </p>
           <m.h2
             id="faq-heading"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="font-alice text-3xl text-navy-deep md:text-4xl"
           >
-            Frequently Asked Questions
+            Frequently Asked{" "}
+            <span className="font-lora italic text-gold">Questions.</span>
           </m.h2>
         </div>
 
