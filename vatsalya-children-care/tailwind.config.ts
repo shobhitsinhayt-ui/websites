@@ -19,8 +19,10 @@ const config: Config = {
         ink: "#1B2436",
       },
       fontFamily: {
+        // alice = Libre Caslon Text (headings), lora = same serif for italic accents,
+        // poppins = Inter (body). Names kept stable so components need no changes.
         alice: ["var(--font-alice)", "Georgia", "serif"],
-        lora: ["var(--font-lora)", "Georgia", "serif"],
+        lora: ["var(--font-alice)", "Georgia", "serif"],
         poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
       keyframes: {

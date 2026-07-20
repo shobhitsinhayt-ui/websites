@@ -1,26 +1,22 @@
 // src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
-import { Alice, Lora, Poppins } from "next/font/google";
+import { Libre_Caslon_Text, Inter } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { NAP } from "@/components/brand";
 import MotionProvider from "@/components/MotionProvider";
 
-const alice = Alice({
-  weight: "400",
+// Medio-matching type system: Libre Caslon Text (headings/serif accents) + Inter (body).
+// Keeps the existing --font-alice / --font-poppins variables so class names stay stable.
+const heading = Libre_Caslon_Text({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-alice",
   display: "swap",
 });
 
-const lora = Lora({
-  subsets: ["latin"],
-  variable: "--font-lora",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  weight: ["400", "500", "600"],
+const body = Inter({
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
@@ -103,7 +99,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${alice.variable} ${lora.variable} ${poppins.variable}`}
+      className={`${heading.variable} ${body.variable}`}
     >
       <head>
         <JsonLd />
