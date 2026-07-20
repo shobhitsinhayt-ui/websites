@@ -1,6 +1,7 @@
 // src/components/Footer.tsx
 import { NAP } from "./brand";
 import FooterWordmark from "./FooterWordmark";
+import HoverLink from "./HoverLink";
 
 type Link = { label: string; href: string; external?: boolean };
 
@@ -28,14 +29,12 @@ function Group({ label, links }: { label: string; links: Link[] }) {
       <ul className="space-y-2.5">
         {links.map((l) => (
           <li key={l.label}>
-            <a
+            <HoverLink
               href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
-              className="font-poppins text-sm text-navy-deep/80 transition-colors hover:text-[#0a1526]"
-            >
-              {l.label}
-            </a>
+              label={l.label}
+              external={l.external}
+              className="font-poppins text-sm text-navy-deep/80 hover:text-[#0a1526]"
+            />
           </li>
         ))}
       </ul>
@@ -66,20 +65,18 @@ export default function Footer() {
                 {NAP.address.full}
               </p>
               <p>
-                <a
+                <HoverLink
                   href={NAP.phoneTel}
-                  className="font-poppins text-sm text-navy-deep/80 transition-colors hover:text-[#0a1526]"
-                >
-                  {NAP.phone}
-                </a>
+                  label={NAP.phone}
+                  className="font-poppins text-sm text-navy-deep/80 hover:text-[#0a1526]"
+                />
               </p>
               <p>
-                <a
+                <HoverLink
                   href={`mailto:${NAP.email}`}
-                  className="font-poppins text-sm text-navy-deep/80 transition-colors hover:text-[#0a1526]"
-                >
-                  {NAP.email}
-                </a>
+                  label={NAP.email}
+                  className="font-poppins text-sm text-navy-deep/80 hover:text-[#0a1526]"
+                />
               </p>
             </address>
           </div>
