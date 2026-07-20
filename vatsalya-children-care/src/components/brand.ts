@@ -40,11 +40,11 @@ export const DOCTOR = {
     "My mission is to blend advanced, evidence-based medical expertise with a warm, gentle approach so that both children and parents feel safe, understood, and confident during every consultation.",
   // Short, scannable credential highlights (verified from CV)
   highlights: [
-    "MBBS — GCS Medical College & Hospital, Ahmedabad",
-    "MD Pediatrics — SMIMER, Surat",
-    "Senior Resident, Pediatrics — GMERS, Sola, Ahmedabad",
-    "Assistant Professor, Pediatrics — BJ Medical College, Ahmedabad",
-    "2nd Prize, Best Paper — GUJ-PEDICON · IJP Best Thesis nominee",
+    "MBBS, GCS Medical College & Hospital, Ahmedabad",
+    "MD Pediatrics, SMIMER, Surat",
+    "Senior Resident, Pediatrics, GMERS, Sola, Ahmedabad",
+    "Assistant Professor, Pediatrics, BJ Medical College, Ahmedabad",
+    "2nd Prize, Best Paper, GUJ-PEDICON · IJP Best Thesis nominee",
     "Published in the International Journal of Contemporary Pediatrics",
     "Advanced Neonatal Resuscitation (IAP & NNF) · BLS & PALS (IAP)",
   ],
@@ -63,10 +63,10 @@ export const HOURS = {
   // Human-readable rows for the Location section
   display: [
     {
-      days: "Monday – Saturday",
-      sessions: "9:00 AM – 1:00 PM  ·  4:30 PM – 7:30 PM",
+      days: "Monday to Saturday",
+      sessions: "9:00 AM to 1:00 PM  ·  4:30 PM to 7:30 PM",
     },
-    { days: "Sunday", sessions: "9:00 AM – 12:00 PM" },
+    { days: "Sunday", sessions: "9:00 AM to 12:00 PM" },
   ],
   // Structured for schema.org openingHoursSpecification
   spec: [
@@ -101,12 +101,12 @@ export const HOURS = {
 export const BRAND = {
   tagline: "Nurturing Smiles, Ensuring Health",
   meaning:
-    "Vatsalya (वात्सल्य) — parental love and unconditional affection for a child",
+    "Vatsalya (वात्सल्य), parental love and unconditional affection for a child",
 } as const;
 
 export const COPY = {
   hero: {
-    h1: "Best Pediatrician in Sola, Ahmedabad — Vatsalya Children Care",
+    h1: "Best Pediatrician in Sola, Ahmedabad, Vatsalya Children Care",
     subhead:
       "Compassionate, expert care for your child from newborn through adolescence, led by Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant).",
     primaryCTA: "Book Appointment on WhatsApp",
@@ -125,7 +125,7 @@ export const COPY = {
       },
       {
         title: "A Partnership with Parents",
-        body: "We listen, explain, and build a care plan together — because you are the true expert on your child.",
+        body: "We listen, explain, and build a care plan together, because you are the true expert on your child.",
       },
     ],
     paragraphs: [

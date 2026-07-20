@@ -22,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative overflow-hidden bg-cream-light pt-16 md:pt-20"
+      className="relative overflow-hidden bg-cream-light pb-8 pt-16 md:pt-20"
       aria-label="Footer"
     >
       <div className="mx-auto max-w-6xl px-4 md:px-8">
@@ -129,26 +129,21 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright — Medio-style */}
         <div className="mt-14 flex flex-col items-center justify-between gap-2 border-t border-navy/10 pt-6 sm:flex-row">
-          <p className="font-poppins text-xs text-ink/50">
-            © {year} {NAP.name} · All rights reserved
+          <p className="font-poppins text-xs text-ink/60">
+            © {year} Copyright · {NAP.name}
           </p>
-          <a
-            href={NAP.website}
-            className="font-poppins text-xs text-ink/50 transition-colors hover:text-gold"
-          >
-            vatsalyachildrencare.in
-          </a>
+          <p className="font-poppins text-xs text-ink/60">All rights reserved.</p>
         </div>
       </div>
 
       {/* Giant brand wordmark */}
       <div
         aria-hidden="true"
-        className="pointer-events-none mt-6 select-none text-center leading-none"
+        className="pointer-events-none mt-8 select-none px-4 text-center"
       >
-        <span className="font-alice text-[24vw] leading-[0.8] tracking-tight text-navy-deep/90 md:text-[18vw]">
+        <span className="inline-block pb-[0.12em] font-alice text-[19vw] leading-[0.82] tracking-tight text-navy-deep md:text-[15vw]">
           Vatsalya<span className="text-gold">.</span>
         </span>
       </div>

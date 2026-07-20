@@ -91,7 +91,7 @@ export default function AboutPreview() {
 
             {/* Medical-council registration */}
             <p className="mt-4 font-poppins text-xs text-white/50">
-              Gujarat Medical Council Reg. Nos. — MBBS {DOCTOR.regMbbs} · MD
+              Gujarat Medical Council Reg. Nos., MBBS {DOCTOR.regMbbs} · MD
               Pediatrics {DOCTOR.regMd}
             </p>
 

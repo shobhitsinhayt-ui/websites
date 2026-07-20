@@ -15,7 +15,7 @@ const credentials: { label: string; icon: LucideIcon }[] = [
   { label: "Neonatologist", icon: Baby },
   { label: "Certified Lactation Consultant", icon: HeartHandshake },
   { label: "IAP 2025 Vaccination", icon: Syringe },
-  { label: "Children 0–18 Years", icon: ShieldCheck },
+  { label: "Children 0 to 18 Years", icon: ShieldCheck },
 ];
 
 function Pill({ label, icon: Icon }: { label: string; icon: LucideIcon }) {

@@ -27,7 +27,7 @@ export default function ContactPage() {
           Get in Touch
         </h1>
         <p className="mx-auto mt-4 max-w-md font-poppins text-base text-ink/70">
-          Book an appointment or ask us anything about your child&apos;s care —
+          Book an appointment or ask us anything about your child&apos;s care,
           we&apos;re happy to help.
         </p>
         <p className="mt-4 font-poppins text-xs text-ink/50">
