@@ -27,7 +27,7 @@ export default function BenefitsBand() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-18%", "18%"]);
 
   return (
     <section ref={ref} aria-label="Why choose Vatsalya" className="relative">
@@ -35,7 +35,7 @@ export default function BenefitsBand() {
         {/* Parallax photo (taller than the frame so it can pan without gaps) */}
         <m.div
           style={reduce ? undefined : { y }}
-          className="absolute -top-[15%] left-0 h-[130%] w-full"
+          className="absolute -top-[30%] left-0 h-[160%] w-full"
         >
           <Image
             src="/img/baby-laugh.jpg"
