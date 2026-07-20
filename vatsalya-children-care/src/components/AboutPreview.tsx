@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { m } from "framer-motion";
 import { DOCTOR, NAP } from "./brand";
+import PhotoDecor from "./PhotoDecor";
 
 export default function AboutPreview() {
   return (
@@ -33,16 +34,18 @@ export default function AboutPreview() {
             className="flex justify-center"
           >
             {/* Fixed 2:3 frame + object-cover: photo never stretches or squishes */}
-            <div className="relative aspect-[2/3] w-56 overflow-hidden rounded-lg border-2 border-gold/30 bg-navy-deep shadow-xl md:w-64">
-              <Image
-                src="/dr-aashita.jpg"
-                alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
-                fill
-                sizes="(max-width: 768px) 224px, 256px"
-                className="object-cover object-top"
-                priority
-              />
-              <div className="absolute -bottom-4 -right-4 h-8 w-8 border-b-2 border-r-2 border-gold opacity-60" aria-hidden="true" />
+            <div className="relative w-56 md:w-64">
+              <PhotoDecor variant="dark" />
+              <div className="relative z-10 aspect-[2/3] w-full overflow-hidden rounded-lg border-2 border-gold/30 bg-navy-deep shadow-xl">
+                <Image
+                  src="/dr-aashita.jpg"
+                  alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
+                  fill
+                  sizes="(max-width: 768px) 224px, 256px"
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
             </div>
           </m.div>
 
