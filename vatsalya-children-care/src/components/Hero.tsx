@@ -32,21 +32,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Soft navy panel behind the photo side (desktop) — warm cream + bold navy */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] md:block"
-      >
-        <div className="h-full w-full rounded-l-[3rem] bg-gradient-to-br from-navy to-navy-deep" />
-        <div
-          className="absolute inset-0 rounded-l-[3rem] opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(135deg, #C29138 0px, #C29138 1px, transparent 1px, transparent 14px)",
-          }}
-        />
-      </div>
-
       <div className="relative mx-auto max-w-6xl px-4 md:px-8">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
           {/* Left — copy */}
@@ -114,7 +99,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative order-1 mx-auto w-full max-w-md md:order-2"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-gold/30 bg-cream-light shadow-xl">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-gold/30 bg-cream-light shadow-xl">
               <Image
                 src="/dr-aashita.jpg"
                 alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
@@ -127,14 +112,14 @@ export default function Hero() {
             {/* Gold corner-frame accents */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -left-3 -top-3 h-16 w-16 rounded-tl-3xl border-l-2 border-t-2 border-gold/60"
+              className="pointer-events-none absolute -left-3 -top-3 h-16 w-16 border-l-2 border-t-2 border-gold/60"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-3 -right-3 h-16 w-16 rounded-br-3xl border-b-2 border-r-2 border-gold/60"
+              className="pointer-events-none absolute -bottom-3 -right-3 h-16 w-16 border-b-2 border-r-2 border-gold/60"
             />
             {/* Floating doctor badge */}
-            <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-gold/30 bg-cream-light px-4 py-3 shadow-xl md:left-6">
+            <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-lg border border-gold/30 bg-cream-light px-4 py-3 shadow-xl md:left-6">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy text-gold">
                 <BadgeCheck className="h-5 w-5" aria-hidden="true" />
               </span>
