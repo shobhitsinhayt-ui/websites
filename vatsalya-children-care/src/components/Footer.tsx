@@ -143,7 +143,7 @@ export default function Footer() {
         aria-hidden="true"
         className="pointer-events-none mt-8 select-none px-4 text-center"
       >
-        <span className="inline-block pb-[0.12em] font-alice text-[19vw] leading-[0.82] tracking-tight text-navy-deep md:text-[15vw]">
+        <span className="inline-block pb-[0.06em] font-poppins text-[20vw] font-bold leading-[0.85] tracking-tight text-navy-deep md:text-[16vw]">
           Vatsalya<span className="text-gold">.</span>
         </span>
       </div>
