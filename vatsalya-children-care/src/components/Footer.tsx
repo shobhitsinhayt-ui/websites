@@ -23,17 +23,17 @@ const CONNECT: Link[] = [
 function Group({ label, links }: { label: string; links: Link[] }) {
   return (
     <div className="flex gap-5">
-      <span className="whitespace-nowrap font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-[#0a1526]">
+      <span className="whitespace-nowrap font-poppins text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0a1526]">
         ( {label} )
       </span>
-      <ul className="space-y-2.5">
+      <ul className="space-y-2">
         {links.map((l) => (
           <li key={l.label}>
             <HoverLink
               href={l.href}
               label={l.label}
               external={l.external}
-              className="font-poppins text-sm text-navy-deep/80 hover:text-[#0a1526]"
+              className="font-poppins text-[13px] text-navy-deep/80 hover:text-[#0a1526]"
             />
           </li>
         ))}
@@ -52,30 +52,30 @@ export default function Footer() {
     >
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* Link groups (Medio-style: label beside list, single navy colour) */}
-        <div className="flex flex-col flex-wrap gap-10 md:flex-row md:gap-x-16">
+        <div className="flex flex-col flex-wrap gap-8 md:flex-row md:gap-x-12">
           <Group label="Main Pages" links={PAGES} />
 
           {/* Contact group */}
           <div className="flex gap-5">
-            <span className="whitespace-nowrap font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-[#0a1526]">
+            <span className="whitespace-nowrap font-poppins text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0a1526]">
               ( Contact )
             </span>
-            <address className="space-y-2.5 not-italic">
-              <p className="max-w-xs font-poppins text-sm leading-relaxed text-navy/70">
+            <address className="space-y-2 not-italic">
+              <p className="max-w-xs font-poppins text-[13px] leading-snug text-navy-deep/80">
                 {NAP.address.full}
               </p>
               <p>
                 <HoverLink
                   href={NAP.phoneTel}
                   label={NAP.phone}
-                  className="font-poppins text-sm text-navy-deep/80 hover:text-[#0a1526]"
+                  className="font-poppins text-[13px] text-navy-deep/80 hover:text-[#0a1526]"
                 />
               </p>
               <p>
                 <HoverLink
                   href={`mailto:${NAP.email}`}
                   label={NAP.email}
-                  className="font-poppins text-sm text-navy-deep/80 hover:text-[#0a1526]"
+                  className="font-poppins text-[13px] text-navy-deep/80 hover:text-[#0a1526]"
                 />
               </p>
             </address>
