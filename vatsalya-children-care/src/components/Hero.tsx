@@ -32,6 +32,21 @@ export default function Hero() {
         }}
       />
 
+      {/* Soft navy panel behind the photo side (desktop) — warm cream + bold navy */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] md:block"
+      >
+        <div className="h-full w-full rounded-l-[3rem] bg-gradient-to-br from-navy to-navy-deep" />
+        <div
+          className="absolute inset-0 rounded-l-[3rem] opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(135deg, #C29138 0px, #C29138 1px, transparent 1px, transparent 14px)",
+          }}
+        />
+      </div>
+
       <div className="relative mx-auto max-w-6xl px-4 md:px-8">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
           {/* Left — copy */}
@@ -119,15 +134,15 @@ export default function Hero() {
               className="pointer-events-none absolute -bottom-3 -right-3 h-16 w-16 rounded-br-3xl border-b-2 border-r-2 border-gold/60"
             />
             {/* Floating doctor badge */}
-            <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl bg-navy px-4 py-3 shadow-xl md:left-6">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+            <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-gold/30 bg-cream-light px-4 py-3 shadow-xl md:left-6">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy text-gold">
                 <BadgeCheck className="h-5 w-5" aria-hidden="true" />
               </span>
               <span className="leading-tight">
-                <span className="block font-alice text-sm text-white">
+                <span className="block font-alice text-sm text-navy-deep">
                   {DOCTOR.name}
                 </span>
-                <span className="block font-poppins text-[0.7rem] tracking-wide text-gold-soft">
+                <span className="block font-poppins text-[0.7rem] tracking-wide text-gold">
                   {DOCTOR.credentials}
                 </span>
               </span>
