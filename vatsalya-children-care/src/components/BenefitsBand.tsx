@@ -2,7 +2,13 @@
 "use client";
 
 import Image from "next/image";
-import { m } from "framer-motion";
+import { useRef } from "react";
+import {
+  m,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
 
 const BENEFITS = [
   "Expert MD Pediatrician",
@@ -12,16 +18,34 @@ const BENEFITS = [
 ];
 
 export default function BenefitsBand() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+
+  // Parallax: the photo pans slower than the scroll, so it feels like the
+  // image is moving behind the content.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
+
   return (
-    <section aria-label="Why choose Vatsalya" className="relative">
+    <section ref={ref} aria-label="Why choose Vatsalya" className="relative">
       <div className="relative h-[75vh] min-h-[440px] w-full overflow-hidden">
-        <Image
-          src="/img/baby-laugh.jpg"
-          alt="A happy, healthy baby cared for at Vatsalya Children Care"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        {/* Parallax photo (taller than the frame so it can pan without gaps) */}
+        <m.div
+          style={reduce ? undefined : { y }}
+          className="absolute -top-[15%] left-0 h-[130%] w-full"
+        >
+          <Image
+            src="/img/baby-laugh.jpg"
+            alt="A happy, healthy baby cared for at Vatsalya Children Care"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </m.div>
+
         {/* Legibility gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/25 to-transparent" />
 

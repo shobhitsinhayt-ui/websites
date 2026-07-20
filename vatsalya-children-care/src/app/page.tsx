@@ -18,8 +18,8 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <WhyVatsalya />
-      <ServicesGrid />
       <BenefitsBand />
+      <ServicesGrid />
       <AboutPreview />
       <FAQAccordion />
       <LocationSection />
