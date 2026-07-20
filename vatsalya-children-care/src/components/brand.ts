@@ -12,13 +12,14 @@ export const NAP = {
   instagram: "https://www.instagram.com/vatsalyachildrencare",
   website: "https://vatsalyachildrencare.in",
   address: {
+    // Matches Google Business Profile exactly (critical for local-SEO NAP consistency)
     street:
-      "509, B-Wing, 5th Floor, Grace Business Park, Sangeet Cross Roads, Near Shaleen Hospital, Above Reliance SMART Bazaar, Kargil Petrol Pump Road, Sola",
+      "5th Floor, Kargil Petrol Pump Road, Grace Business Park Sagar, 509 B-Wing, above Reliance SMART Bazaar, Science City",
     city: "Ahmedabad",
     state: "Gujarat",
     postalCode: "380060",
     country: "India",
-    full: "509, B-Wing, 5th Floor, Grace Business Park, Sangeet Cross Roads, Near Shaleen Hospital, Above Reliance SMART Bazaar, Kargil Petrol Pump Road, Sola, Ahmedabad, Gujarat – 380060, India",
+    full: "5th Floor, Kargil Petrol Pump Road, Grace Business Park Sagar, 509 B-Wing, above Reliance SMART Bazaar, Science City, Ahmedabad, Gujarat 380060, India",
   },
   // Exact Google Maps place (from the clinic's verified Google listing) —
   // opens the right pin in the user's Google Maps app/site.
@@ -39,11 +40,11 @@ export const DOCTOR = {
     "My mission is to blend advanced, evidence-based medical expertise with a warm, gentle approach so that both children and parents feel safe, understood, and confident during every consultation.",
   // Short, scannable credential highlights (verified from CV)
   highlights: [
-    "MBBS — GCS Medical College & Hospital, Ahmedabad",
-    "MD Pediatrics — SMIMER, Surat",
-    "Senior Resident, Pediatrics — GMERS, Sola, Ahmedabad",
-    "Assistant Professor, Pediatrics — BJ Medical College, Ahmedabad",
-    "2nd Prize, Best Paper — GUJ-PEDICON · IJP Best Thesis nominee",
+    "MBBS, GCS Medical College & Hospital, Ahmedabad",
+    "MD Pediatrics, SMIMER, Surat",
+    "Senior Resident, Pediatrics, GMERS, Sola, Ahmedabad",
+    "Assistant Professor, Pediatrics, BJ Medical College, Ahmedabad",
+    "2nd Prize, Best Paper, GUJ-PEDICON · IJP Best Thesis nominee",
     "Published in the International Journal of Contemporary Pediatrics",
     "Advanced Neonatal Resuscitation (IAP & NNF) · BLS & PALS (IAP)",
   ],
@@ -62,10 +63,10 @@ export const HOURS = {
   // Human-readable rows for the Location section
   display: [
     {
-      days: "Monday – Saturday",
-      sessions: "9:00 AM – 1:00 PM  ·  4:30 PM – 7:30 PM",
+      days: "Monday to Saturday",
+      sessions: "9:00 AM to 1:00 PM  ·  4:30 PM to 7:30 PM",
     },
-    { days: "Sunday", sessions: "9:00 AM – 12:00 PM" },
+    { days: "Sunday", sessions: "9:00 AM to 12:00 PM" },
   ],
   // Structured for schema.org openingHoursSpecification
   spec: [
@@ -100,12 +101,12 @@ export const HOURS = {
 export const BRAND = {
   tagline: "Nurturing Smiles, Ensuring Health",
   meaning:
-    "Vatsalya (वात्सल्य) — parental love and unconditional affection for a child",
+    "Vatsalya (वात्सल्य), parental love and unconditional affection for a child",
 } as const;
 
 export const COPY = {
   hero: {
-    h1: "Best Pediatrician in Sola, Ahmedabad — Vatsalya Children Care",
+    h1: "Best Pediatrician in Sola, Ahmedabad, Vatsalya Children Care",
     subhead:
       "Compassionate, expert care for your child from newborn through adolescence, led by Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant).",
     primaryCTA: "Book Appointment on WhatsApp",
@@ -124,7 +125,7 @@ export const COPY = {
       },
       {
         title: "A Partnership with Parents",
-        body: "We listen, explain, and build a care plan together — because you are the true expert on your child.",
+        body: "We listen, explain, and build a care plan together, because you are the true expert on your child.",
       },
     ],
     paragraphs: [
@@ -152,7 +153,7 @@ export const FAQ_ITEMS = [
   {
     question: "Where is the clinic located?",
     answer:
-      "509, B-Wing, 5th Floor, Grace Business Park, Sangeet Cross Roads, near Shaleen Hospital and above Reliance SMART Bazaar, on Kargil Petrol Pump Road, Sola, Ahmedabad – 380060. We're close to Science City and the Gujarat High Court.",
+      "5th Floor, Grace Business Park Sagar, 509 B-Wing, above Reliance SMART Bazaar, on Kargil Petrol Pump Road, Science City, Ahmedabad, Gujarat 380060. We're close to Science City and the Gujarat High Court.",
   },
   {
     question: "How do I book an appointment?",

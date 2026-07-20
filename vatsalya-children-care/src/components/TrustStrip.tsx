@@ -1,24 +1,29 @@
 // src/components/TrustStrip.tsx
 "use client";
 
-const credentials = [
-  { label: "MBBS · MD Pediatrics", icon: "🎓" },
-  { label: "Neonatologist", icon: "👶" },
-  { label: "Certified Lactation Consultant", icon: "🤱" },
-  { label: "IAP 2025 Vaccination", icon: "💉" },
-  { label: "Children 0–18 Years", icon: "❤️" },
+import {
+  GraduationCap,
+  Baby,
+  HeartHandshake,
+  Syringe,
+  ShieldCheck,
+  type LucideIcon,
+} from "lucide-react";
+
+const credentials: { label: string; icon: LucideIcon }[] = [
+  { label: "MBBS · MD Pediatrics", icon: GraduationCap },
+  { label: "Neonatologist", icon: Baby },
+  { label: "Certified Lactation Consultant", icon: HeartHandshake },
+  { label: "IAP 2025 Vaccination", icon: Syringe },
+  { label: "Children 0 to 18 Years", icon: ShieldCheck },
 ];
 
-function Pill({ label, icon }: { label: string; icon: string }) {
+function Pill({ label, icon: Icon }: { label: string; icon: LucideIcon }) {
   return (
-    <span className="flex shrink-0 items-center gap-2 px-6 font-poppins text-xs font-medium text-white/85 sm:text-sm">
-      <span aria-hidden="true" className="text-base">
-        {icon}
-      </span>
+    <span className="flex shrink-0 items-center gap-2.5 px-6 font-poppins text-xs font-medium text-white/85 sm:text-sm">
+      <Icon className="h-4 w-4 text-gold" aria-hidden="true" strokeWidth={1.75} />
       {label}
-      <span aria-hidden="true" className="ml-6 text-gold/50">
-        ✦
-      </span>
+      <span aria-hidden="true" className="ml-6 h-1 w-1 rounded-full bg-gold/50" />
     </span>
   );
 }

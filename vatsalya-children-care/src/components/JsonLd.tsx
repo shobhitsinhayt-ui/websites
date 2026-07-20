@@ -81,7 +81,7 @@ const physicianSchema = {
   ],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Sola, Ahmedabad",
+    addressLocality: "Science City, Ahmedabad",
     addressRegion: NAP.address.state,
     postalCode: NAP.address.postalCode,
     addressCountry: "IN",

@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { m, type Variants } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BadgeCheck } from "lucide-react";
 import { NAP, COPY, DOCTOR } from "./brand";
 
 const fadeUp: Variants = {
@@ -99,7 +99,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative order-1 mx-auto w-full max-w-md md:order-2"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-gold/30 bg-cream-light shadow-xl">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-gold/30 bg-cream-light shadow-xl">
               <Image
                 src="/dr-aashita.jpg"
                 alt="Dr. Aashita A. Sinha, Pediatrician, Neonatologist and Lactation Consultant at Vatsalya Children Care, Sola, Ahmedabad"
@@ -112,18 +112,25 @@ export default function Hero() {
             {/* Gold corner-frame accents */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -left-3 -top-3 h-16 w-16 rounded-tl-3xl border-l-2 border-t-2 border-gold/60"
+              className="pointer-events-none absolute -left-3 -top-3 h-16 w-16 border-l-2 border-t-2 border-gold/60"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-3 -right-3 h-16 w-16 rounded-br-3xl border-b-2 border-r-2 border-gold/60"
+              className="pointer-events-none absolute -bottom-3 -right-3 h-16 w-16 border-b-2 border-r-2 border-gold/60"
             />
-            {/* Floating credential chip */}
-            <div className="absolute -bottom-4 left-4 rounded-full bg-navy px-4 py-2 shadow-lg md:left-6">
-              <p className="font-poppins text-xs font-semibold text-white">
-                MD Pediatrics{" "}
-                <span className="text-gold-soft">· Lactation Consultant</span>
-              </p>
+            {/* Floating doctor badge */}
+            <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-lg border border-gold/30 bg-cream-light px-4 py-3 shadow-xl md:left-6">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy text-gold">
+                <BadgeCheck className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <span className="leading-tight">
+                <span className="block font-alice text-sm text-navy-deep">
+                  {DOCTOR.name}
+                </span>
+                <span className="block font-poppins text-[0.7rem] tracking-wide text-gold">
+                  {DOCTOR.credentials}
+                </span>
+              </span>
             </div>
           </m.div>
         </div>
