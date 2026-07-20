@@ -1,5 +1,6 @@
 // src/components/Footer.tsx
 import { NAP } from "./brand";
+import FooterWordmark from "./FooterWordmark";
 
 type Link = { label: string; href: string; external?: boolean };
 
@@ -21,7 +22,7 @@ const CONNECT: Link[] = [
 function Group({ label, links }: { label: string; links: Link[] }) {
   return (
     <div className="flex gap-5">
-      <span className="whitespace-nowrap font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-navy-deep">
+      <span className="whitespace-nowrap font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-[#0a1526]">
         ( {label} )
       </span>
       <ul className="space-y-2.5">
@@ -31,7 +32,7 @@ function Group({ label, links }: { label: string; links: Link[] }) {
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noopener noreferrer" : undefined}
-              className="font-poppins text-sm text-navy/70 transition-colors hover:text-navy-deep"
+              className="font-poppins text-sm text-navy-deep/80 transition-colors hover:text-[#0a1526]"
             >
               {l.label}
             </a>
@@ -57,7 +58,7 @@ export default function Footer() {
 
           {/* Contact group */}
           <div className="flex gap-5">
-            <span className="whitespace-nowrap font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-navy-deep">
+            <span className="whitespace-nowrap font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-[#0a1526]">
               ( Contact )
             </span>
             <address className="space-y-2.5 not-italic">
@@ -67,7 +68,7 @@ export default function Footer() {
               <p>
                 <a
                   href={NAP.phoneTel}
-                  className="font-poppins text-sm text-navy/70 transition-colors hover:text-navy-deep"
+                  className="font-poppins text-sm text-navy-deep/80 transition-colors hover:text-[#0a1526]"
                 >
                   {NAP.phone}
                 </a>
@@ -75,7 +76,7 @@ export default function Footer() {
               <p>
                 <a
                   href={`mailto:${NAP.email}`}
-                  className="font-poppins text-sm text-navy/70 transition-colors hover:text-navy-deep"
+                  className="font-poppins text-sm text-navy-deep/80 transition-colors hover:text-[#0a1526]"
                 >
                   {NAP.email}
                 </a>
@@ -88,22 +89,15 @@ export default function Footer() {
 
         {/* Copyright row */}
         <div className="mt-14 flex flex-col items-start justify-between gap-2 border-t border-navy/10 pt-6 sm:flex-row sm:items-center">
-          <p className="font-poppins text-xs text-navy/60">
+          <p className="font-poppins text-xs text-navy-deep/70">
             © {year} Copyright · {NAP.name}
           </p>
-          <p className="font-poppins text-xs text-navy/60">All rights reserved.</p>
+          <p className="font-poppins text-xs text-navy-deep/70">All rights reserved.</p>
         </div>
       </div>
 
-      {/* Giant brand wordmark — single navy colour, clean geometric sans */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none mt-8 select-none px-4 text-center"
-      >
-        <span className="inline-block pb-[0.06em] font-poppins text-[20vw] font-bold leading-[0.85] tracking-tight text-navy-deep md:text-[16vw]">
-          Vatsalya.
-        </span>
-      </div>
+      {/* Giant brand wordmark — near-black, hover spin */}
+      <FooterWordmark />
     </footer>
   );
 }
