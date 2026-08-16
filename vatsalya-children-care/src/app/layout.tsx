@@ -8,8 +8,7 @@ import { NAP } from "@/components/brand";
 import MotionProvider from "@/components/MotionProvider";
 import ConsentBanner from "@/components/ConsentBanner";
 import AnalyticsListener from "@/components/AnalyticsListener";
-
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+import { GTM_ID } from "@/lib/analytics";
 
 // Medio-matching type system: Libre Caslon Text (headings/serif accents) + Inter (body).
 // Keeps the existing --font-alice / --font-poppins variables so class names stay stable.

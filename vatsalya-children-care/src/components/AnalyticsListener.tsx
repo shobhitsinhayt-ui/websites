@@ -2,13 +2,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { GTM_ID } from "@/lib/analytics";
 
 // Pushes conversion events to the dataLayer when a visitor clicks any
 // WhatsApp (wa.me) or phone (tel:) link, anywhere on the site. GTM listens
 // for these custom events — no per-button code needed.
 export default function AnalyticsListener() {
   useEffect(() => {
-    if (!process.env.NEXT_PUBLIC_GTM_ID) return;
+    if (!GTM_ID) return;
 
     const handler = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
