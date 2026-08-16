@@ -31,7 +31,8 @@ export default function ConsentBanner() {
     // Only relevant when analytics is actually configured.
     if (!GTM_ID) return;
     const stored = localStorage.getItem(KEY);
-    if (stored === "granted") updateConsent(true);
+    // Default is "granted"; re-apply a returning visitor's decline.
+    if (stored === "denied") updateConsent(false);
     if (!stored) setShow(true);
   }, []);
 
