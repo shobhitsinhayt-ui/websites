@@ -37,6 +37,9 @@ export default function ContactForm() {
     ]
       .filter(Boolean)
       .join("\n");
+    // Conversion event for GTM / Google Ads
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "contact_form_submit" });
     window.open(
       `https://wa.me/919016039796?text=${encodeURIComponent(lines)}`,
       "_blank",
