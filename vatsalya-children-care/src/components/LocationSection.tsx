@@ -53,7 +53,7 @@ export default function LocationSection() {
                   {NAP.address.full}
                 </address>
                 <p className="mt-1 font-poppins text-xs text-ink/60">
-                  Near Science City · Near Gujarat High Court
+                  Serving Sola, Science City, Gota, Thaltej &amp; Chandlodiya · Near Gujarat High Court
                 </p>
                 <a
                   href={NAP.mapsUrl}

@@ -48,9 +48,11 @@ export default function Navbar() {
             className="h-9 w-9"
             priority
           />
-          <div className="hidden leading-tight sm:block">
-            <p className="font-alice text-sm text-navy-deep">{NAP.name}</p>
-            <p className="font-lora text-[0.65rem] italic text-gold">
+          <div className="leading-tight">
+            <p className="font-alice text-xs text-navy-deep sm:text-sm">
+              {NAP.name}
+            </p>
+            <p className="hidden font-lora text-[0.65rem] italic text-gold sm:block">
               {BRAND.tagline}
             </p>
           </div>

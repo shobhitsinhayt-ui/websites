@@ -17,7 +17,15 @@ const clinicSchema = {
   description:
     "Pediatric clinic in Sola, Ahmedabad offering general pediatric OPD, IAP-schedule vaccination, newborn care, well-baby checkups, growth and development assessment, child nutrition, teenage health counselling, and specialised breastfeeding and lactation support for children from birth through 18 years.",
   medicalSpecialty: "Pediatric",
-  areaServed: ["Sola", "Science City", "Gujarat High Court area", "Ahmedabad"],
+  areaServed: [
+    "Sola",
+    "Science City",
+    "Gota",
+    "Thaltej",
+    "Chandlodiya",
+    "Gujarat High Court area",
+    "Ahmedabad",
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: NAP.address.street,
