@@ -8,16 +8,20 @@ const KEY = "vcc-cookie-consent";
 
 function updateConsent(granted: boolean) {
   window.dataLayer = window.dataLayer || [];
-  // gtag() pushes an arguments object; replicate that shape.
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
+  const value = granted ? "granted" : "denied";
+  const consent = {
+    ad_storage: value,
+    analytics_storage: value,
+    ad_user_data: value,
+    ad_personalization: value,
+  };
+  // Prefer the global gtag() defined in the consent-default script so the
+  // command has the exact arguments shape GTM Consent Mode expects.
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", consent);
+  } else {
+    window.dataLayer.push(["consent", "update", consent]);
   }
-  gtag("consent", "update", {
-    ad_storage: granted ? "granted" : "denied",
-    analytics_storage: granted ? "granted" : "denied",
-    ad_user_data: granted ? "granted" : "denied",
-    ad_personalization: granted ? "granted" : "denied",
-  });
 }
 
 export default function ConsentBanner() {
