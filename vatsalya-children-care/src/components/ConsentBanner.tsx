@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { GTM_ID } from "@/lib/analytics";
 
 const KEY = "vcc-cookie-consent";
 
@@ -24,7 +25,7 @@ export default function ConsentBanner() {
 
   useEffect(() => {
     // Only relevant when analytics is actually configured.
-    if (!process.env.NEXT_PUBLIC_GTM_ID) return;
+    if (!GTM_ID) return;
     const stored = localStorage.getItem(KEY);
     if (stored === "granted") updateConsent(true);
     if (!stored) setShow(true);
