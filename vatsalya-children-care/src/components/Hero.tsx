@@ -55,16 +55,21 @@ export default function Hero() {
               variants={fadeUp}
               className="font-alice text-4xl leading-[1.1] text-navy-deep sm:text-5xl lg:text-6xl"
             >
-              Best Pediatrician in{" "}
-              <TypewriterAreas
-                words={HERO_AREAS}
-                className="text-gold"
-              />
-              , Ahmedabad
+              Best Pediatrician in Ahmedabad
               <span className="mt-3 block font-lora italic text-gold">
                 Vatsalya Children Care
               </span>
             </m.h1>
+
+            {/* Cycling locality line — area sits at the end so it can grow or
+                shrink without orphaning or overflowing any trailing text. */}
+            <m.p
+              variants={fadeUp}
+              className="mt-4 font-lora text-lg italic text-gold md:text-xl"
+            >
+              Caring for children in{" "}
+              <TypewriterAreas words={HERO_AREAS} className="not-italic font-semibold" />
+            </m.p>
 
             {/* Subhead */}
             <m.p
