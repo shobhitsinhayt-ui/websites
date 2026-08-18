@@ -8,9 +8,9 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, m } from "framer-motion";
 
 const LINKS = [
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "FAQs", href: "/#faq" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "FAQs", href: "/faqs" },
   { label: "Contact", href: "/contact" },
 ];
 

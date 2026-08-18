@@ -7,9 +7,9 @@ type Link = { label: string; href: string; external?: boolean };
 
 const PAGES: Link[] = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "About Dr. Aashita", href: "/#doctor" },
-  { label: "FAQs", href: "/#faq" },
+  { label: "Services", href: "/services" },
+  { label: "About Dr. Aashita", href: "/about" },
+  { label: "FAQs", href: "/faqs" },
   { label: "Location", href: "/#location" },
   { label: "Contact", href: "/contact" },
 ];

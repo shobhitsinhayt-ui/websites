@@ -6,7 +6,12 @@ import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { FAQ_ITEMS } from "./brand";
 
-export default function FAQAccordion() {
+export default function FAQAccordion({
+  showHeader = true,
+}: {
+  /** Hide the built-in section heading when the page already has its own H1. */
+  showHeader?: boolean;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
@@ -14,26 +19,29 @@ export default function FAQAccordion() {
   return (
     <section
       id="faq"
-      aria-labelledby="faq-heading"
+      aria-labelledby={showHeader ? "faq-heading" : undefined}
+      aria-label={showHeader ? undefined : "Frequently asked questions"}
       className="bg-cream py-16 md:py-24"
     >
       <div className="mx-auto max-w-3xl px-4 md:px-8">
-        <div className="mb-10 md:mb-12">
-          <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            FAQ
-          </p>
-          <m.h2
-            id="faq-heading"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="font-alice text-3xl text-navy-deep md:text-4xl"
-          >
-            Frequently Asked{" "}
-            <span className="font-lora italic text-gold">Questions.</span>
-          </m.h2>
-        </div>
+        {showHeader && (
+          <div className="mb-10 md:mb-12">
+            <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              FAQ
+            </p>
+            <m.h2
+              id="faq-heading"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="font-alice text-3xl text-navy-deep md:text-4xl"
+            >
+              Frequently Asked{" "}
+              <span className="font-lora italic text-gold">Questions.</span>
+            </m.h2>
+          </div>
+        )}
 
         <dl className="space-y-3">
           {FAQ_ITEMS.map((item, i) => (
