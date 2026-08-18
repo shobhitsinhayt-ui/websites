@@ -202,3 +202,16 @@ export const FAQ_ITEMS = [
       "Your child is cared for directly by a fully credentialed pediatrician (MD Pediatrics) who is also a neonatologist and lactation consultant. We combine expert medical care with genuine warmth, in a calm, child-friendly clinic in Sola, Ahmedabad.",
   },
 ] as const;
+
+// Nearby localities the clinic serves, in rough order of proximity to
+// Science City / Sola. Used by the hero typewriter and (later) area pages.
+export const HERO_AREAS = [
+  "Sola",
+  "Science City",
+  "Gota",
+  "Thaltej",
+  "Chandlodiya",
+  "Ghatlodia",
+  "Bhadaj",
+  "Vandemataram",
+] as const;
