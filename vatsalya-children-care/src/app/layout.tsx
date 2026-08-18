@@ -87,6 +87,9 @@ export const metadata: Metadata = {
     other: [{ rel: "mask-icon", url: "/favicon.svg" }],
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "MsqVQxcTY4t2ScKuiUwTkfT1nT_Wq0DdhUy2bKe-x-s",
+  },
   alternates: {
     canonical: NAP.website,
   },
