@@ -4,7 +4,8 @@
 import Image from "next/image";
 import { m, type Variants } from "framer-motion";
 import { ArrowUpRight, BadgeCheck } from "lucide-react";
-import { NAP, COPY, DOCTOR } from "./brand";
+import { NAP, COPY, DOCTOR, HERO_AREAS } from "./brand";
+import TypewriterAreas from "./TypewriterAreas";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -54,7 +55,12 @@ export default function Hero() {
               variants={fadeUp}
               className="font-alice text-4xl leading-[1.1] text-navy-deep sm:text-5xl lg:text-6xl"
             >
-              Best Pediatrician in Sola, Ahmedabad
+              Best Pediatrician in{" "}
+              <TypewriterAreas
+                words={HERO_AREAS}
+                className="text-gold"
+              />
+              , Ahmedabad
               <span className="mt-3 block font-lora italic text-gold">
                 Vatsalya Children Care
               </span>
