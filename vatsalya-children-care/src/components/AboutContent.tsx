@@ -24,7 +24,7 @@ const fadeUp = {
 
 // Accolade phrases emphasised inside the bio so her standout roles catch the eye.
 const BIO_HIGHLIGHTS = [
-  "certified lactation consultant",
+  "pediatrician, neonatologist, and certified lactation consultant",
   "Senior Resident in Pediatrics at GMERS Medical College & Hospital, Sola",
   "Assistant Professor of Pediatrics at BJ Medical College, Ahmedabad",
 ];
