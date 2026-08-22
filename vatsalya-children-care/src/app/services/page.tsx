@@ -43,7 +43,6 @@ export default function ServicesPage() {
         title="Comprehensive Care for"
         accent="Every Stage of Childhood"
         subtitle="From your baby's first breath to your teenager's changing needs, Dr. Aashita A. Sinha offers complete pediatric, newborn, and lactation care under one warm, child-friendly roof in Sola, Ahmedabad."
-        crumb="Services"
       />
 
       <ServicesFullList />

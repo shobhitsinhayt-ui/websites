@@ -43,15 +43,14 @@ export default function AboutPage() {
         title="Meet"
         accent={DOCTOR.name}
         subtitle="A pediatrician, neonatologist, and certified lactation consultant who blends advanced, evidence-based medicine with genuine warmth, so your child and you feel safe at every visit."
-        crumb="About"
       />
 
       <AboutContent />
 
       <CtaBand
         heading="Care your family can trust,"
-        accent="right here in Sola."
-        subtext="Book a consultation with Dr. Aashita for your child's checkup, vaccination, newborn care, or breastfeeding support."
+        accent="close to home."
+        subtext="Based in Sola, Science City, and welcoming families from Gota, Thaltej, Chandlodiya and nearby areas of Ahmedabad. Book a consultation for your child's checkup, vaccination, newborn care, or breastfeeding support."
       />
 
       <Footer />

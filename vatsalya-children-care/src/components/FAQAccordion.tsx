@@ -26,7 +26,7 @@ export default function FAQAccordion({
       <div className="mx-auto max-w-3xl px-4 md:px-8">
         {showHeader && (
           <div className="mb-10 md:mb-12">
-            <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">
               FAQ
             </p>
             <m.h2
@@ -38,7 +38,7 @@ export default function FAQAccordion({
               className="font-alice text-3xl text-navy-deep md:text-4xl"
             >
               Frequently Asked{" "}
-              <span className="font-lora italic text-gold">Questions.</span>
+              <span className="font-lora italic text-gold-ink">Questions.</span>
             </m.h2>
           </div>
         )}
@@ -64,7 +64,7 @@ export default function FAQAccordion({
                     {item.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-gold transition-transform duration-300 ${
+                    className={`h-5 w-5 shrink-0 text-gold-ink transition-transform duration-300 ${
                       openIndex === i ? "rotate-180" : ""
                     }`}
                     aria-hidden="true"

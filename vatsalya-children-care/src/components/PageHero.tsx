@@ -1,7 +1,6 @@
 // src/components/PageHero.tsx
 "use client";
 
-import Link from "next/link";
 import { m } from "framer-motion";
 
 type Props = {
@@ -10,21 +9,18 @@ type Props = {
   /** Optional trailing accent rendered in gold serif italic. */
   accent?: string;
   subtitle?: string;
-  /** Current page label for the Home / … breadcrumb. */
-  crumb: string;
 };
 
 /**
  * Shared editorial page header (cream band) used by the dedicated pages so
  * their formatting matches the homepage sections: gold eyebrow, Libre Caslon
- * H1 with an optional gold italic accent, subtitle, and a breadcrumb.
+ * H1 with an optional gold italic accent, subtitle.
  */
 export default function PageHero({
   eyebrow,
   title,
   accent,
   subtitle,
-  crumb,
 }: Props) {
   return (
     <section className="relative overflow-hidden bg-cream px-4 pb-12 pt-32 text-center md:pb-16 md:pt-40">
@@ -44,13 +40,13 @@ export default function PageHero({
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative mx-auto max-w-2xl"
       >
-        <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+        <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">
           {eyebrow}
         </p>
         <h1 className="font-alice text-4xl leading-[1.1] text-navy-deep md:text-5xl lg:text-6xl">
           {title}
           {accent && (
-            <span className="mt-2 block font-lora italic text-gold">
+            <span className="mt-2 block font-lora italic text-gold-ink">
               {accent}
             </span>
           )}
@@ -60,15 +56,6 @@ export default function PageHero({
             {subtitle}
           </p>
         )}
-        <nav
-          aria-label="Breadcrumb"
-          className="mt-6 font-poppins text-xs text-ink/50"
-        >
-          <Link href="/" className="transition-colors hover:text-gold">
-            Home
-          </Link>{" "}
-          / <span className="text-navy">{crumb}</span>
-        </nav>
       </m.div>
     </section>
   );

@@ -13,6 +13,10 @@ const config: Config = {
         navy: "#0E2753",
         "navy-deep": "#001E51",
         gold: "#C29138",
+        // Deeper gold for text/icons on cream backgrounds — meets WCAG AA
+        // (>=4.5:1 on cream and cream-light). Bright `gold` stays for fills,
+        // borders, and text on navy.
+        "gold-ink": "#8A5E12",
         "gold-soft": "#D5B376",
         cream: "#FFF4E5",
         "cream-light": "#FFFCF0",

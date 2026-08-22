@@ -2,14 +2,62 @@
 "use client";
 
 import Image from "next/image";
+import { Fragment } from "react";
 import { m } from "framer-motion";
-import { GraduationCap, Award, Languages, BadgeCheck } from "lucide-react";
-import { DOCTOR, NAP } from "./brand";
+import {
+  GraduationCap,
+  Award,
+  Languages,
+  BadgeCheck,
+  Briefcase,
+  ShieldCheck,
+  BookOpen,
+  MapPin,
+  type LucideIcon,
+} from "lucide-react";
+import { DOCTOR, NAP, HERO_AREAS } from "./brand";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 };
+
+// Accolade phrases emphasised inside the bio so her standout roles catch the eye.
+const BIO_HIGHLIGHTS = [
+  "certified lactation consultant",
+  "Senior Resident in Pediatrics at GMERS Medical College & Hospital, Sola",
+  "Assistant Professor of Pediatrics at BJ Medical College, Ahmedabad",
+];
+
+/** Splits the bio and wraps any accolade phrase in a gold, semibold span. */
+function renderBio(text: string) {
+  const pattern = new RegExp(
+    `(${BIO_HIGHLIGHTS.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+    "g"
+  );
+  return text.split(pattern).map((part, i) =>
+    BIO_HIGHLIGHTS.includes(part) ? (
+      <strong key={i} className="font-semibold text-gold">
+        {part}
+      </strong>
+    ) : (
+      <Fragment key={i}>{part}</Fragment>
+    )
+  );
+}
+
+/** Picks an icon + accent for each credential line by keyword. */
+function credentialMeta(item: string): { icon: LucideIcon; award: boolean } {
+  if (/prize|nominee|published|journal/i.test(item))
+    return { icon: Award, award: true };
+  if (/mbbs|md pediatrics|md in/i.test(item))
+    return { icon: GraduationCap, award: false };
+  if (/resident|professor/i.test(item))
+    return { icon: Briefcase, award: false };
+  if (/resuscitation|bls|pals/i.test(item))
+    return { icon: ShieldCheck, award: false };
+  return { icon: BookOpen, award: false };
+}
 
 export default function AboutContent() {
   return (
@@ -73,8 +121,24 @@ export default function AboutContent() {
             </blockquote>
 
             <p className="font-poppins text-sm leading-relaxed text-white/80 md:text-base">
-              {DOCTOR.bio}
+              {renderBio(DOCTOR.bio)}
             </p>
+
+            {/* Areas served — honest home base + welcoming reach */}
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 font-poppins text-xs font-semibold uppercase tracking-wide text-gold">
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                Serving
+              </span>
+              {HERO_AREAS.map((area) => (
+                <span
+                  key={area}
+                  className="rounded-full border border-white/15 px-3 py-1 font-poppins text-xs text-white/75"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
 
             <p className="mt-6 font-poppins text-xs text-white/50">
               Gujarat Medical Council Reg. Nos., MBBS {DOCTOR.regMbbs} · MD
@@ -84,45 +148,73 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* Credentials timeline */}
+      {/* Credentials timeline — animated cards with per-item icons */}
       <section className="bg-cream px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-3xl">
-          <div className="mb-10 flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy/5 text-navy">
+          <div className="mb-10 flex items-center gap-3 md:mb-12">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy text-gold">
               <Award className="h-5 w-5" aria-hidden="true" strokeWidth={1.5} />
             </span>
             <h2 className="font-alice text-2xl text-navy-deep md:text-3xl">
               Training &{" "}
-              <span className="font-lora italic text-gold">Credentials.</span>
+              <span className="font-lora italic text-gold-ink">Credentials.</span>
             </h2>
           </div>
 
-          <ol className="relative space-y-6 border-l border-gold/30 pl-6">
-            {DOCTOR.highlights.map((item, i) => (
-              <m.li
-                key={item}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="relative"
-              >
-                <span
-                  aria-hidden="true"
-                  className="absolute -left-[1.85rem] top-1.5 h-3 w-3 rounded-full border-2 border-gold bg-cream"
-                />
-                <p className="font-poppins text-sm leading-relaxed text-ink/80 md:text-base">
-                  {item}
-                </p>
-              </m.li>
-            ))}
-          </ol>
+          {/* One calm grouped reveal for the whole timeline (not per-item). */}
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative pl-10 md:pl-12"
+          >
+            {/* Vertical guide line */}
+            <span
+              aria-hidden="true"
+              className="absolute left-[19px] top-2 bottom-2 w-px bg-gradient-to-b from-gold via-gold/50 to-transparent md:left-[23px]"
+            />
+
+            <ul className="space-y-4">
+              {DOCTOR.highlights.map((item) => {
+                const { icon: Icon, award } = credentialMeta(item);
+                return (
+                  <li key={item} className="relative">
+                    {/* Node icon on the line */}
+                    <span
+                      className={`absolute -left-10 top-3 flex h-9 w-9 items-center justify-center rounded-full border shadow-sm md:-left-12 ${
+                        award
+                          ? "border-gold bg-gold text-navy"
+                          : "border-gold/40 bg-cream-light text-navy"
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" aria-hidden="true" strokeWidth={1.75} />
+                    </span>
+
+                    <div
+                      className={`rounded-2xl border bg-cream-light px-5 py-4 transition-shadow hover:shadow-md hover:shadow-navy/5 ${
+                        award ? "border-gold/50" : "border-gold/20"
+                      }`}
+                    >
+                      {award && (
+                        <span className="mb-1 inline-block font-poppins text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold-ink">
+                          Recognition
+                        </span>
+                      )}
+                      <p className="font-poppins text-sm leading-relaxed text-ink/80 md:text-base">
+                        {item}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </m.div>
         </div>
       </section>
 
       {/* Education + languages */}
-      <section className="bg-cream-light px-4 pb-16 md:px-8 md:pb-24">
+      <section className="bg-cream-light px-4 pb-16 pt-14 md:px-8 md:pb-24 md:pt-20">
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
           <m.div
             variants={fadeUp}
@@ -170,7 +262,7 @@ export default function AboutContent() {
                   key={lang}
                   className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-cream-light px-4 py-1.5 font-poppins text-sm text-navy"
                 >
-                  <BadgeCheck className="h-4 w-4 text-gold" aria-hidden="true" />
+                  <BadgeCheck className="h-4 w-4 text-gold-ink" aria-hidden="true" />
                   {lang}
                 </span>
               ))}

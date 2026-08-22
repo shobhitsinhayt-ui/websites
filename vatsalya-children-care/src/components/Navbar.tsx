@@ -52,7 +52,7 @@ export default function Navbar() {
             <p className="font-alice text-xs text-navy-deep sm:text-sm">
               {NAP.name}
             </p>
-            <p className="hidden font-lora text-[0.65rem] italic text-gold sm:block">
+            <p className="hidden font-lora text-[0.65rem] italic text-gold-ink sm:block">
               {BRAND.tagline}
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="transition-colors hover:text-gold"
+              className="transition-colors hover:text-gold-ink"
             >
               {l.label}
             </a>
@@ -129,7 +129,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block py-3 font-poppins text-lg text-navy transition-colors hover:text-gold"
+                  className="block py-3 font-poppins text-lg text-navy transition-colors hover:text-gold-ink"
                 >
                   {l.label}
                 </a>
