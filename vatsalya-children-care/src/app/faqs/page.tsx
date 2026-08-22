@@ -43,7 +43,6 @@ export default function FaqsPage() {
         title="Frequently Asked"
         accent="Questions."
         subtitle="Everything parents commonly ask about visiting Vatsalya Children Care. Still unsure? Message us on WhatsApp and we will happily help."
-        crumb="FAQs"
       />
 
       <FAQAccordion showHeader={false} />

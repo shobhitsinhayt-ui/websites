@@ -157,34 +157,29 @@ export default function AboutContent() {
             </span>
             <h2 className="font-alice text-2xl text-navy-deep md:text-3xl">
               Training &{" "}
-              <span className="font-lora italic text-gold">Credentials.</span>
+              <span className="font-lora italic text-gold-ink">Credentials.</span>
             </h2>
           </div>
 
-          <div className="relative pl-10 md:pl-12">
-            {/* Animated vertical line that draws in on view */}
-            <m.span
+          {/* One calm grouped reveal for the whole timeline (not per-item). */}
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative pl-10 md:pl-12"
+          >
+            {/* Vertical guide line */}
+            <span
               aria-hidden="true"
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-              className="absolute left-[19px] top-2 bottom-2 w-px origin-top bg-gradient-to-b from-gold via-gold/50 to-transparent md:left-[23px]"
+              className="absolute left-[19px] top-2 bottom-2 w-px bg-gradient-to-b from-gold via-gold/50 to-transparent md:left-[23px]"
             />
 
             <ul className="space-y-4">
-              {DOCTOR.highlights.map((item, i) => {
+              {DOCTOR.highlights.map((item) => {
                 const { icon: Icon, award } = credentialMeta(item);
                 return (
-                  <m.li
-                    key={item}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="relative"
-                  >
+                  <li key={item} className="relative">
                     {/* Node icon on the line */}
                     <span
                       className={`absolute -left-10 top-3 flex h-9 w-9 items-center justify-center rounded-full border shadow-sm md:-left-12 ${
@@ -202,7 +197,7 @@ export default function AboutContent() {
                       }`}
                     >
                       {award && (
-                        <span className="mb-1 inline-block font-poppins text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold">
+                        <span className="mb-1 inline-block font-poppins text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold-ink">
                           Recognition
                         </span>
                       )}
@@ -210,11 +205,11 @@ export default function AboutContent() {
                         {item}
                       </p>
                     </div>
-                  </m.li>
+                  </li>
                 );
               })}
             </ul>
-          </div>
+          </m.div>
         </div>
       </section>
 
@@ -267,7 +262,7 @@ export default function AboutContent() {
                   key={lang}
                   className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-cream-light px-4 py-1.5 font-poppins text-sm text-navy"
                 >
-                  <BadgeCheck className="h-4 w-4 text-gold" aria-hidden="true" />
+                  <BadgeCheck className="h-4 w-4 text-gold-ink" aria-hidden="true" />
                   {lang}
                 </span>
               ))}
