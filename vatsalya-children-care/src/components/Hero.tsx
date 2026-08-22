@@ -82,7 +82,7 @@ export default function Hero() {
             {/* Credentials */}
             <m.p
               variants={fadeUp}
-              className="mt-4 font-lora text-sm italic text-gold-ink"
+              className="mt-4 font-lora text-sm text-gold-ink"
             >
               {DOCTOR.name} · {DOCTOR.credentials} · {DOCTOR.roles}
             </m.p>

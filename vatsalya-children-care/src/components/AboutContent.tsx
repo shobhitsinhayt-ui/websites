@@ -150,11 +150,11 @@ export default function AboutContent() {
             <h2 className="font-alice text-2xl text-white md:text-3xl">
               {DOCTOR.name}
             </h2>
-            <p className="mb-6 mt-1 font-lora text-sm italic text-gold">
+            <p className="mb-6 mt-1 font-lora text-sm text-gold">
               {DOCTOR.credentials} · {DOCTOR.roles}
             </p>
 
-            <blockquote className="mb-6 border-l-2 border-gold/50 pl-4 font-lora text-base italic leading-relaxed text-white/90 md:text-lg">
+            <blockquote className="mb-6 border-l-2 border-gold/50 pl-4 font-lora text-base leading-relaxed text-white/90 md:text-lg">
               &ldquo;{DOCTOR.quote}&rdquo;
             </blockquote>
 
