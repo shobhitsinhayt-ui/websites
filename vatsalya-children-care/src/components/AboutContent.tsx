@@ -23,27 +23,65 @@ const fadeUp = {
 };
 
 // Accolade phrases emphasised inside the bio so her standout roles catch the eye.
-const BIO_HIGHLIGHTS = [
-  "pediatrician, neonatologist, and certified lactation consultant",
-  "Senior Resident in Pediatrics at GMERS Medical College & Hospital, Sola",
-  "Assistant Professor of Pediatrics at BJ Medical College, Ahmedabad",
+// Accolade phrases in the bio that get PARTIAL gold emphasis. Each phrase
+// lists its segments in order; `gold: true` = emphasised, `false` = plain, so
+// connector words (and / in / at / of) and place names stay un-highlighted.
+// The segments must concatenate back to `text` exactly.
+const BIO_PHRASES: { text: string; parts: { s: string; gold: boolean }[] }[] = [
+  {
+    text: "pediatrician, neonatologist, and certified lactation consultant",
+    parts: [
+      { s: "pediatrician, neonatologist,", gold: true },
+      { s: " and ", gold: false },
+      { s: "certified lactation consultant", gold: true },
+    ],
+  },
+  {
+    text: "Senior Resident in Pediatrics at GMERS Medical College & Hospital, Sola",
+    parts: [
+      { s: "Senior Resident", gold: true },
+      { s: " in ", gold: false },
+      { s: "Pediatrics", gold: true },
+      { s: " at ", gold: false },
+      { s: "GMERS Medical College & Hospital,", gold: true },
+      { s: " Sola", gold: false },
+    ],
+  },
+  {
+    text: "Assistant Professor of Pediatrics at BJ Medical College, Ahmedabad",
+    parts: [
+      { s: "Assistant Professor", gold: true },
+      { s: " of ", gold: false },
+      { s: "Pediatrics", gold: true },
+      { s: " at ", gold: false },
+      { s: "BJ Medical College, Ahmedabad", gold: true },
+    ],
+  },
 ];
 
-/** Splits the bio and wraps any accolade phrase in a gold, semibold span. */
+/** Splits the bio and gives each accolade phrase segment-level gold emphasis. */
 function renderBio(text: string) {
   const pattern = new RegExp(
-    `(${BIO_HIGHLIGHTS.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+    `(${BIO_PHRASES.map((p) => p.text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
     "g"
   );
-  return text.split(pattern).map((part, i) =>
-    BIO_HIGHLIGHTS.includes(part) ? (
-      <strong key={i} className="font-semibold text-gold">
-        {part}
-      </strong>
-    ) : (
-      <Fragment key={i}>{part}</Fragment>
-    )
-  );
+  return text.split(pattern).map((chunk, i) => {
+    const phrase = BIO_PHRASES.find((p) => p.text === chunk);
+    if (!phrase) return <Fragment key={i}>{chunk}</Fragment>;
+    return (
+      <Fragment key={i}>
+        {phrase.parts.map((part, j) =>
+          part.gold ? (
+            <strong key={j} className="font-semibold text-gold">
+              {part.s}
+            </strong>
+          ) : (
+            <Fragment key={j}>{part.s}</Fragment>
+          )
+        )}
+      </Fragment>
+    );
+  });
 }
 
 /** Picks an icon + accent for each credential line by keyword. */
