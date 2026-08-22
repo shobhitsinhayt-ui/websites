@@ -1,7 +1,8 @@
 # Vatsalya Children Care — Project Context (handoff brief)
 
 > Paste this (or point Claude at this file) at the start of any new Claude session
-> — Code or Cowork — so it instantly understands the project. Last updated: 2026-08-22.
+> — Code or Cowork — so it instantly understands the project. Last updated: 2026-08-22
+> (area pages + directory pack shipped).
 
 ## What this is
 A live marketing website for **Vatsalya Children Care**, a pediatric + newborn +
@@ -41,6 +42,11 @@ search (ChatGPT/Perplexity/Google AI Overviews).
   quote, "Serving" area chips, animated credentials timeline, education + languages cards.
 - **`/services`** — all 9 services as animated, crawlable cards (data in `src/lib/services.ts`).
 - **`/faqs`** — the 12-Q accordion on its own page.
+- **5 area landing pages** `/pediatrician-in/{gota,thaltej,chandlodiya,science-city,ghatlodia}`
+  — genuinely unique copy per area (intro, landmarks, directions) + per-area
+  MedicalClinic/LocalBusiness schema with `areaServed`. Data in `src/lib/areas.ts`,
+  rendered by `AreaContent.tsx`; `science-city` is `homeTurf` (clinic is physically there).
+  Dr. Aashita photo on each area's trust card.
 - Shared `PageHero` + `CtaBand`. Navbar shows a **Home** link on every page except `/`.
 - Breadcrumbs: visible ones removed from flat top-level pages (redundant); `BreadcrumbList`
   JSON-LD kept for SEO. Reintroduce visible breadcrumbs later on nested area/service pages.
@@ -79,20 +85,23 @@ search (ChatGPT/Perplexity/Google AI Overviews).
 
 ## What's LEFT (action items)
 On-site (owner = Claude):
-- **NEXT UP — area pages** (`/pediatrician-in/{gota,thaltej,chandlodiya,science-city}`):
-  unique per-area content + per-area LocalBusiness schema. Top ranking lever left.
-- Then a keyword-driven `/blog`.
-- Optional/future: individual service pages (`/services/vaccination`, `/lactation-consultant`…)
-  — currently one `/services` overview page exists, not per-service pages.
+- **NEXT UP — keyword-driven `/blog`** (top on-site ranking lever left).
+- Individual service pages (`/services/vaccination`, `/lactation-consultant`…) —
+  currently one `/services` overview page exists, not per-service pages.
+- Second-wave area pages when warranted (Bhadaj, Sughad, Vandemataram).
 - Add real clinic photos when available (hero/about currently use one portrait + stock).
 
-Off-site (owner = client): 50+ Google reviews (highest ROI now that GBP is set up),
-import the GA4 Key Events into Google Ads as conversions, directory listings
-(Practo/Justdial/1mg with identical NAP), Keyword Planner export.
+Off-site (owner = client): 50+ Google reviews (highest ROI now that GBP is set up);
+**register on directories using the ready-made pack** — repo copy `docs/DIRECTORY-LISTINGS.md`,
+plain-English version as a Google Doc handed to the client's sister (Justdial → Practo
+→ 1mg → Lybrate, identical NAP); import the GA4 Key Events into Google Ads as
+conversions; star `call_click` once it fires; request indexing for the 5 area URLs;
+Keyword Planner export.
 
-Done since launch: GBP set up; dedicated About/Services/FAQ pages; site-wide
-accessibility pass (gold-ink contrast + global reduced-motion); Home nav link;
-GA4 Key Events; indexing requested for all pages.
+Done since launch: GBP set up; dedicated About/Services/FAQ pages; **5 area landing
+pages** (gota, thaltej, chandlodiya, science-city, ghatlodia); site-wide accessibility
+pass (gold-ink contrast + global reduced-motion); Home nav link; GA4 Key Events;
+indexing requested for all top-level pages; directory-listings pack authored.
 
 ## Style / preferences
 - Warm-premium, trustworthy pediatric tone. Not childish. Brand fonts/colors fixed.
