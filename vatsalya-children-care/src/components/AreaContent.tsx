@@ -97,7 +97,7 @@ export default function AreaContent({ area }: { area: Area }) {
               </span>
             </div>
             <p className="mt-4 font-alice text-xl text-navy-deep">{DOCTOR.name}</p>
-            <p className="mt-1 font-lora text-sm italic text-gold-ink">
+            <p className="mt-1 font-lora text-sm text-gold-ink">
               {DOCTOR.credentials} · {DOCTOR.roles}
             </p>
             <div className="mt-5 space-y-2 border-t border-gold/20 pt-4">

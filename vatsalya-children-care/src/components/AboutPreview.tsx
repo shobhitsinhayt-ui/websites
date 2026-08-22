@@ -70,12 +70,12 @@ export default function AboutPreview() {
             >
               {DOCTOR.name}
             </h2>
-            <p className="font-lora text-sm italic text-gold mb-6">
+            <p className="font-lora text-sm text-gold mb-6">
               {DOCTOR.credentials} · {DOCTOR.roles}
             </p>
 
             {/* Mission quote */}
-            <blockquote className="mb-6 border-l-2 border-gold/50 pl-4 font-lora text-base italic leading-relaxed text-white/90">
+            <blockquote className="mb-6 border-l-2 border-gold/50 pl-4 font-lora text-base leading-relaxed text-white/90">
               &ldquo;{DOCTOR.quote}&rdquo;
             </blockquote>
 
