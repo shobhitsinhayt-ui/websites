@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { m } from "framer-motion";
 import { ArrowUpRight, MapPin, Clock, BadgeCheck } from "lucide-react";
 import { NAP, DOCTOR, HOURS } from "./brand";
@@ -79,9 +80,20 @@ export default function AreaContent({ area }: { area: Area }) {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="h-fit rounded-3xl border border-gold/20 bg-cream-light p-6 md:sticky md:top-28"
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-navy text-gold">
-              <BadgeCheck className="h-6 w-6" aria-hidden="true" />
-            </span>
+            <div className="relative h-20 w-20">
+              <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-gold/40 bg-navy-deep shadow-md">
+                <Image
+                  src="/dr-aashita.jpg"
+                  alt={`${DOCTOR.name}, ${DOCTOR.credentials}, pediatrician at Vatsalya Children Care`}
+                  fill
+                  sizes="80px"
+                  className="object-cover object-top"
+                />
+              </div>
+              <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full border-2 border-cream-light bg-navy text-gold">
+                <BadgeCheck className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </div>
             <p className="mt-4 font-alice text-xl text-navy-deep">{DOCTOR.name}</p>
             <p className="mt-1 font-lora text-sm italic text-gold-ink">
               {DOCTOR.credentials} · {DOCTOR.roles}
