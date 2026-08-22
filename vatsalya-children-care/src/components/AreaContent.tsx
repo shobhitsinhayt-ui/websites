@@ -31,7 +31,9 @@ export default function AreaContent({ area }: { area: Area }) {
             <h2 className="font-alice text-3xl leading-tight text-navy-deep md:text-4xl">
               Your child&apos;s doctor,{" "}
               <span className="font-lora italic text-gold-ink">
-                minutes from {area.name}.
+                {area.homeTurf
+                  ? `right here in ${area.name}.`
+                  : `minutes from ${area.name}.`}
               </span>
             </h2>
             <div className="mt-6 space-y-4">
@@ -159,7 +161,7 @@ export default function AreaContent({ area }: { area: Area }) {
         <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-2">
           <div>
             <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">
-              Getting here from {area.name}
+              {area.homeTurf ? `Finding us in ${area.name}` : `Getting here from ${area.name}`}
             </p>
             <h2 className="font-alice text-3xl text-navy-deep md:text-4xl">
               Easy to reach,{" "}

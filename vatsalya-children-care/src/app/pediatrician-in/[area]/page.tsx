@@ -127,7 +127,11 @@ export default async function AreaPage({
       <AreaContent area={area} />
 
       <CtaBand
-        heading={`Book your child's visit from ${area.name},`}
+        heading={
+          area.homeTurf
+            ? `Book your child's visit in ${area.name},`
+            : `Book your child's visit from ${area.name},`
+        }
         accent="today."
         subtext={`Message us on WhatsApp or call ${NAP.phone}. Appointment-only, with morning and evening OPD sessions.`}
       />
