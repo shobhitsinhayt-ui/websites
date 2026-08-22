@@ -1,7 +1,7 @@
 # Vatsalya Children Care — Project Context (handoff brief)
 
 > Paste this (or point Claude at this file) at the start of any new Claude session
-> — Code or Cowork — so it instantly understands the project. Last updated: 2026-08-18.
+> — Code or Cowork — so it instantly understands the project. Last updated: 2026-08-22.
 
 ## What this is
 A live marketing website for **Vatsalya Children Care**, a pediatric + newborn +
@@ -21,6 +21,10 @@ search (ChatGPT/Perplexity/Google AI Overviews).
 - Next.js (App Router) + TypeScript + Tailwind v3 + Framer Motion (LazyMotion, `m` components)
 - `next/image`, `next-sitemap`, static SSG. Fonts: Libre Caslon Text (headings), Inter/Poppins (body).
 - Brand tokens: navy `#0E2753` / navy-deep `#001E51` / gold `#C29138` / cream `#FFF4E5`.
+  Plus `gold-ink #8A5E12` — accessible deep gold for text/icons **on cream** (bright
+  gold fails WCAG on cream; use gold-ink for any gold text on cream/cream-light).
+- Motion respects reduced-motion globally via `<MotionConfig reducedMotion="user">`
+  in `MotionProvider`.
 
 ## Workflow rules (important)
 - `main` is **branch-protected**: no direct pushes, PR required, squash-merge, linear history.
@@ -28,10 +32,18 @@ search (ChatGPT/Perplexity/Google AI Overviews).
 - Commit author identity is set to `shobhitsinhayt-ui`.
 
 ## What's built (done)
-- Single landing page + `/contact` page. Sections: hero (Dr. Aashita photo), credentials
-  marquee, Why Vatsalya (scroll word-reveal), parallax benefits band, interactive services
-  list (9 services with photos), About Dr. Aashita, FAQ accordion (12 Qs), Location + map,
-  appointment CTA (4 floating photos), editorial footer with giant wordmark.
+- **Pages: home `/`, `/about`, `/services`, `/faqs`, `/contact`** (multi-page, not just
+  one scroll). Homepage sections: hero (Dr. Aashita photo, typewriter cycling nearby
+  areas in a gold tagline), credentials marquee, Why Vatsalya (scroll word-reveal),
+  parallax benefits band, interactive services list (9 services), About preview, FAQ
+  accordion (12 Qs), Location + map, appointment CTA, editorial footer with giant wordmark.
+- **`/about`** — full Dr. Aashita page: navy bio band with accolade highlights + mission
+  quote, "Serving" area chips, animated credentials timeline, education + languages cards.
+- **`/services`** — all 9 services as animated, crawlable cards (data in `src/lib/services.ts`).
+- **`/faqs`** — the 12-Q accordion on its own page.
+- Shared `PageHero` + `CtaBand`. Navbar shows a **Home** link on every page except `/`.
+- Breadcrumbs: visible ones removed from flat top-level pages (redundant); `BreadcrumbList`
+  JSON-LD kept for SEO. Reintroduce visible breadcrumbs later on nested area/service pages.
 - Floating WhatsApp button + sticky mobile call bar on every page.
 - SEO/AEO: unique titles/meta, canonical, OG, 3 JSON-LD blocks (MedicalClinic+LocalBusiness,
   Physician, FAQPage), next-sitemap, `public/llms.txt`, robots (AI crawlers allowed).
@@ -40,8 +52,10 @@ search (ChatGPT/Perplexity/Google AI Overviews).
   (`ConsentBanner.tsx`, default = granted), conversion events pushed to dataLayer:
   `whatsapp_click`, `call_click` (global listener `AnalyticsListener.tsx`),
   `contact_form_submit` (in `ContactForm.tsx`).
-- Google Search Console: verified (HTML-tag meta in `layout.tsx`, PR #33), sitemap
-  submitted, homepage indexed, `/contact` indexing requested. GA4 linked to Google Ads.
+- Google Search Console: verified (HTML-tag meta in `layout.tsx`), sitemap submitted
+  (lists all 5 pages), indexing requested for `/`, `/contact`, `/about`, `/services`,
+  `/faqs`. GA4 linked to Google Ads. GA4 Key Events set: `whatsapp_click`,
+  `contact_form_submit`, `form_start` (star `call_click` once it fires on the live site).
 
 ## Key IDs / config (public, not secret)
 - GA4 Measurement ID: `G-E2XDWDLRY1`
@@ -64,12 +78,21 @@ search (ChatGPT/Perplexity/Google AI Overviews).
 - `docs/superpowers/plans/` — the original implementation plan
 
 ## What's LEFT (action items)
-Off-site (owner = client): Google Business Profile (highest ROI), 50+ Google reviews,
-directory listings (Practo/Justdial/1mg), mark the 3 GA4 events as Key Events (via
-Recent events → star) then import them as Google Ads conversions, Keyword Planner export.
-On-site (owner = Claude): **next up** — build area pages (`/pediatrician-in/{gota,
-thaltej,chandlodiya,science-city}`), then service pages, `/about`, then a keyword-driven
-`/blog`. Add real clinic photos when available. Only home `/` and `/contact` exist today.
+On-site (owner = Claude):
+- **NEXT UP — area pages** (`/pediatrician-in/{gota,thaltej,chandlodiya,science-city}`):
+  unique per-area content + per-area LocalBusiness schema. Top ranking lever left.
+- Then a keyword-driven `/blog`.
+- Optional/future: individual service pages (`/services/vaccination`, `/lactation-consultant`…)
+  — currently one `/services` overview page exists, not per-service pages.
+- Add real clinic photos when available (hero/about currently use one portrait + stock).
+
+Off-site (owner = client): 50+ Google reviews (highest ROI now that GBP is set up),
+import the GA4 Key Events into Google Ads as conversions, directory listings
+(Practo/Justdial/1mg with identical NAP), Keyword Planner export.
+
+Done since launch: GBP set up; dedicated About/Services/FAQ pages; site-wide
+accessibility pass (gold-ink contrast + global reduced-motion); Home nav link;
+GA4 Key Events; indexing requested for all pages.
 
 ## Style / preferences
 - Warm-premium, trustworthy pediatric tone. Not childish. Brand fonts/colors fixed.
