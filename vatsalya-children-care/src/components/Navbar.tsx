@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { NAP, BRAND } from "./brand";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, m } from "framer-motion";
 
 const LINKS = [
@@ -17,6 +18,11 @@ const LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Show a "Home" link on every page except the homepage itself.
+  const links =
+    pathname === "/" ? LINKS : [{ label: "Home", href: "/" }, ...LINKS];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -63,7 +69,7 @@ export default function Navbar() {
           aria-label="Main navigation"
           className="hidden items-center gap-6 font-poppins text-sm font-medium text-navy md:flex"
         >
-          {LINKS.map((l) => (
+          {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -124,7 +130,7 @@ export default function Navbar() {
               </button>
             </div>
             <nav aria-label="Mobile navigation" className="divide-y divide-navy/10">
-              {LINKS.map((l) => (
+              {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
