@@ -9,7 +9,7 @@ import CtaBand from "@/components/CtaBand";
 import { NAP } from "@/components/brand";
 
 export const metadata: Metadata = {
-  title: "Our Services — Pediatric, Newborn & Lactation Care",
+  title: "Our Services: Pediatric, Newborn & Lactation Care",
   description:
     "Pediatric services at Vatsalya Children Care, Sola, Ahmedabad: general pediatric OPD, IAP vaccination, newborn care, breastfeeding and lactation support, well-baby checkups, growth monitoring, child nutrition, teenage health, and teleconsultation.",
   alternates: { canonical: `${NAP.website}/services` },

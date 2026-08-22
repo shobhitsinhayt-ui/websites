@@ -9,7 +9,7 @@ import CtaBand from "@/components/CtaBand";
 import { NAP, DOCTOR } from "@/components/brand";
 
 export const metadata: Metadata = {
-  title: "About Dr. Aashita A. Sinha — Pediatrician & Lactation Consultant",
+  title: "About Dr. Aashita A. Sinha, Pediatrician & Lactation Consultant",
   description:
     "Meet Dr. Aashita A. Sinha (MBBS, MD Pediatrics), pediatrician, neonatologist, and certified lactation consultant at Vatsalya Children Care, Sola, Ahmedabad. Her training, credentials, and gentle, evidence-based approach to child care.",
   alternates: { canonical: `${NAP.website}/about` },
