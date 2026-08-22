@@ -45,7 +45,8 @@ No test command is configured.
 
 ## 5. Conventions
 - **Brand tokens (tailwind):** `navy #0E2753`, `navy-deep #001E51`, `gold #C29138`,
-  `gold-soft #D5B376`, `cream #FFF4E5`, `cream-light #FFFCF0`, `ink #1B2436`.
+  `gold-ink #8A5E12` (accessible deep gold for gold text/icons **on cream** — bright
+  gold fails WCAG on cream), `gold-soft #D5B376`, `cream #FFF4E5`, `cream-light #FFFCF0`, `ink #1B2436`.
 - **Fonts:** `font-alice`/`font-lora` = Libre Caslon Text (serif headings/italic accents),
   `font-poppins` = Inter (body). Variable names are intentionally kept stable.
 - Components are PascalCase `.tsx`, one per file, default-exported. Client components
@@ -63,9 +64,14 @@ No test command is configured.
   Analytics: GA4 + GTM + consent banner + conversion events (`whatsapp_click`,
   `call_click`, `contact_form_submit`). Domain live, Search Console verified, homepage indexed.
   PageSpeed 100/96/100/100.
-- **In progress:** multi-page SEO expansion — area pages
-  (`/pediatrician-in/{gota,thaltej,chandlodiya,science-city}`), then service pages,
-  `/about`, and a keyword-driven `/blog`.
+- **Done (multi-page SEO expansion):** dedicated `/about`, `/services`, `/faqs` pages;
+  **5 area landing pages** `/pediatrician-in/{gota,thaltej,chandlodiya,science-city,ghatlodia}`
+  with unique per-area copy + per-area LocalBusiness schema (`src/lib/areas.ts`,
+  `AreaContent.tsx`); site-wide accessibility pass (gold-ink contrast + global
+  reduced-motion); Home nav link on all pages but `/`. Off-site: directory-listings
+  pack (`docs/DIRECTORY-LISTINGS.md` + plain-English Google Doc for the client).
+- **In progress / next:** individual service pages (`/services/vaccination` …) and a
+  keyword-driven `/blog`.
 - **Known gaps:** few backlinks + reviews + new-site sandbox → currently ranks ~page 3
   organically. Real clinic photos not yet added (using stock/`img/`).
 
@@ -85,3 +91,11 @@ No test command is configured.
 changed the project's state (new pages, analytics, deploy config, ranking status),
 update both the relevant section here and the matching part of `PROJECT-CONTEXT.md`,
 and bump its `Last updated:` date.
+
+**Auto-reminder rule (do this proactively):** after roughly **every 5–7 merged PRs**,
+or whenever a **significant chunk of work** lands (new pages, new analytics/deploy
+config, ranking-status change, a big refactor), pause and ask the user:
+> "We've shipped a fair bit since the docs were last refreshed — want me to update
+> CLAUDE.md + PROJECT-CONTEXT.md before we continue?"
+Don't wait to be asked. Keep a rough mental count of PRs merged in the session; when
+in doubt, ask rather than let the docs drift.
