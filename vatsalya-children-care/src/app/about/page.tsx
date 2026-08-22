@@ -50,8 +50,8 @@ export default function AboutPage() {
 
       <CtaBand
         heading="Care your family can trust,"
-        accent="right here in Sola."
-        subtext="Book a consultation with Dr. Aashita for your child's checkup, vaccination, newborn care, or breastfeeding support."
+        accent="close to home."
+        subtext="Based in Sola, Science City, and welcoming families from Gota, Thaltej, Chandlodiya and nearby areas of Ahmedabad. Book a consultation for your child's checkup, vaccination, newborn care, or breastfeeding support."
       />
 
       <Footer />
