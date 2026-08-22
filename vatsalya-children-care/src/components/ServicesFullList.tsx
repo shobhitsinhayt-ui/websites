@@ -21,12 +21,12 @@ export default function ServicesFullList() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 md:mb-14">
-          <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">
             Everything We Offer
           </p>
           <h2 className="font-alice text-3xl text-navy-deep md:text-4xl">
             Complete{" "}
-            <span className="font-lora italic text-gold">Care.</span>
+            <span className="font-lora italic text-gold-ink">Care.</span>
           </h2>
         </div>
 
@@ -61,7 +61,7 @@ export default function ServicesFullList() {
                   <h3 className="font-alice text-xl leading-tight text-navy-deep">
                     {service.title}
                   </h3>
-                  <p className="mt-1 font-lora text-xs italic text-gold">
+                  <p className="mt-1 font-lora text-xs italic text-gold-ink">
                     {service.subtitle}
                   </p>
                   <p className="mt-3 flex-1 font-poppins text-sm leading-relaxed text-ink/75">

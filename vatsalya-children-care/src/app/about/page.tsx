@@ -43,7 +43,6 @@ export default function AboutPage() {
         title="Meet"
         accent={DOCTOR.name}
         subtitle="A pediatrician, neonatologist, and certified lactation consultant who blends advanced, evidence-based medicine with genuine warmth, so your child and you feel safe at every visit."
-        crumb="About"
       />
 
       <AboutContent />
