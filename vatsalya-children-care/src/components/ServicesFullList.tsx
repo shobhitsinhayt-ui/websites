@@ -71,7 +71,7 @@ export default function ServicesFullList() {
                     href={NAP.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-1.5 font-poppins text-sm font-semibold text-navy transition-colors hover:text-gold"
+                    className="mt-5 inline-flex items-center gap-1.5 font-poppins text-sm font-semibold text-navy transition-colors hover:text-gold-ink"
                   >
                     Book this service
                     <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

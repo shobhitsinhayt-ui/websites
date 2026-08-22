@@ -45,7 +45,7 @@ export default function Hero() {
             {/* Eyebrow */}
             <m.p
               variants={fadeUp}
-              className="mb-5 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold"
+              className="mb-5 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink"
             >
               Pediatric &amp; Lactation Care
             </m.p>
@@ -56,7 +56,7 @@ export default function Hero() {
               className="font-alice text-4xl leading-[1.1] text-navy-deep sm:text-5xl lg:text-6xl"
             >
               Best Pediatrician in Ahmedabad
-              <span className="mt-3 block font-lora italic text-gold">
+              <span className="mt-3 block font-lora italic text-gold-ink">
                 Vatsalya Children Care
               </span>
             </m.h1>
@@ -65,7 +65,7 @@ export default function Hero() {
                 shrink without orphaning or overflowing any trailing text. */}
             <m.p
               variants={fadeUp}
-              className="mt-4 font-lora text-lg italic text-gold md:text-xl"
+              className="mt-4 font-lora text-lg italic text-gold-ink md:text-xl"
             >
               Caring for children in{" "}
               <TypewriterAreas words={HERO_AREAS} className="not-italic font-semibold" />
@@ -82,7 +82,7 @@ export default function Hero() {
             {/* Credentials */}
             <m.p
               variants={fadeUp}
-              className="mt-4 font-lora text-sm italic text-gold"
+              className="mt-4 font-lora text-sm italic text-gold-ink"
             >
               {DOCTOR.name} · {DOCTOR.credentials} · {DOCTOR.roles}
             </m.p>
@@ -138,7 +138,7 @@ export default function Hero() {
                 <span className="block font-alice text-sm text-navy-deep">
                   {DOCTOR.name}
                 </span>
-                <span className="block font-poppins text-[0.7rem] tracking-wide text-gold">
+                <span className="block font-poppins text-[0.7rem] tracking-wide text-gold-ink">
                   {DOCTOR.credentials}
                 </span>
               </span>

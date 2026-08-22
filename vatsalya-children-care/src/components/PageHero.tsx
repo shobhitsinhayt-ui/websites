@@ -14,7 +14,7 @@ type Props = {
 /**
  * Shared editorial page header (cream band) used by the dedicated pages so
  * their formatting matches the homepage sections: gold eyebrow, Libre Caslon
- * H1 with an optional gold italic accent, subtitle, and a breadcrumb.
+ * H1 with an optional gold italic accent, subtitle.
  */
 export default function PageHero({
   eyebrow,

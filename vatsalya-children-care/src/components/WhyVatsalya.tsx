@@ -54,7 +54,7 @@ export default function WhyVatsalya() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 rounded-2xl border border-gold/30 bg-cream-light p-6"
         >
-          <p className="font-poppins text-sm font-semibold text-gold uppercase tracking-wide mb-2">
+          <p className="font-poppins text-sm font-semibold text-gold-ink uppercase tracking-wide mb-2">
             Specialized Lactation Center
           </p>
           <p className="font-poppins text-base text-ink leading-relaxed">

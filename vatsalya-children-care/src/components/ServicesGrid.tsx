@@ -27,7 +27,7 @@ export default function ServicesGrid() {
       <div className="relative mx-auto max-w-6xl px-4 md:px-8">
         {/* Header */}
         <div className="mb-10 md:mb-14">
-          <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">
             Our Services
           </p>
           <h2
@@ -35,7 +35,7 @@ export default function ServicesGrid() {
             className="font-alice text-3xl text-navy-deep md:text-5xl"
           >
             Comprehensive{" "}
-            <span className="font-lora italic text-gold">Care.</span>
+            <span className="font-lora italic text-gold-ink">Care.</span>
           </h2>
         </div>
 
@@ -70,14 +70,14 @@ export default function ServicesGrid() {
                       <span className="block font-alice text-lg leading-tight text-navy-deep">
                         {service.title}
                       </span>
-                      <span className="block font-lora text-xs italic text-gold">
+                      <span className="block font-lora text-xs italic text-gold-ink">
                         {service.subtitle}
                       </span>
                     </span>
                     <ArrowUpRight
                       className={`h-5 w-5 shrink-0 transition-all duration-300 ${
                         isActive
-                          ? "text-gold opacity-100"
+                          ? "text-gold-ink opacity-100"
                           : "text-navy/30 opacity-0"
                       }`}
                       aria-hidden="true"

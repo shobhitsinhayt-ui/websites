@@ -20,7 +20,7 @@ export default function ContactPage() {
 
       {/* Header */}
       <section className="bg-cream px-4 pb-10 pt-32 text-center md:pt-40">
-        <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+        <p className="mb-3 font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">
           Contact
         </p>
         <h1 className="font-alice text-4xl text-navy-deep md:text-5xl">
@@ -29,12 +29,6 @@ export default function ContactPage() {
         <p className="mx-auto mt-4 max-w-md font-poppins text-base text-ink/70">
           Book an appointment or ask us anything about your child&apos;s care,
           we&apos;re happy to help.
-        </p>
-        <p className="mt-4 font-poppins text-xs text-ink/50">
-          <a href="/" className="hover:text-gold">
-            Home
-          </a>{" "}
-          / <span className="text-navy">Contact</span>
         </p>
       </section>
 
@@ -45,33 +39,33 @@ export default function ContactPage() {
           <div className="flex flex-col justify-between gap-10">
             <h2 className="font-alice text-3xl leading-tight text-navy-deep md:text-4xl">
               Have a question? You&apos;re just a{" "}
-              <span className="font-lora italic text-gold">message</span> away.
+              <span className="font-lora italic text-gold-ink">message</span> away.
             </h2>
             <div className="space-y-4">
               <div>
-                <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold">
+                <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold-ink">
                   Phone / WhatsApp
                 </p>
                 <a
                   href={NAP.phoneTel}
-                  className="font-poppins text-lg text-navy transition-colors hover:text-gold"
+                  className="font-poppins text-lg text-navy transition-colors hover:text-gold-ink"
                 >
                   {NAP.phone}
                 </a>
               </div>
               <div>
-                <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold">
+                <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold-ink">
                   Email
                 </p>
                 <a
                   href={`mailto:${NAP.email}`}
-                  className="font-poppins text-lg text-navy transition-colors hover:text-gold"
+                  className="font-poppins text-lg text-navy transition-colors hover:text-gold-ink"
                 >
                   {NAP.email}
                 </a>
               </div>
               <div>
-                <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold">
+                <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold-ink">
                   OPD Timings
                 </p>
                 {HOURS.display.map((row) => (
@@ -93,7 +87,7 @@ export default function ContactPage() {
       <section className="bg-cream-light px-4 pb-20 md:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
           <div className="flex flex-col justify-center">
-            <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold">
+            <p className="font-poppins text-xs font-semibold uppercase tracking-wide text-gold-ink">
               Visit Us
             </p>
             <address className="mt-2 not-italic font-poppins text-base leading-relaxed text-ink">
@@ -103,7 +97,7 @@ export default function ContactPage() {
               href={NAP.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex w-fit items-center gap-1.5 font-poppins text-sm font-semibold text-gold hover:text-navy"
+              className="mt-3 inline-flex w-fit items-center gap-1.5 font-poppins text-sm font-semibold text-gold-ink hover:text-navy"
             >
               Open in Google Maps
             </a>
