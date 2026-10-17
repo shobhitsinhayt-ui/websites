@@ -108,7 +108,7 @@ export const COPY = {
   hero: {
     h1: "Pediatrician in Sola, Ahmedabad, Vatsalya Children Care",
     subhead:
-      "Compassionate, expert care for your child from newborn through adolescence, led by Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant).",
+      "Compassionate care for your child from newborn through adolescence, led by Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant).",
     primaryCTA: "Book Appointment on WhatsApp",
     secondaryCTA: "Call +91 90160 39796",
   },
@@ -132,7 +132,7 @@ export const COPY = {
       "When you step into Vatsalya, your family becomes our primary focus. We are deeply committed to nurturing health and ensuring smiles for every child, safeguarding their physical, emotional, and social development from infancy through adolescence.",
       "We recognise that parents are the true experts on their children. By working closely with you, we get to know your child's unique history so we can support and guide you through every milestone with clarity and confidence.",
       "In addition to core Pediatrics, Vatsalya functions as a specialised center for lactation support. Recognising that nursing offers the ideal foundation for your infant's development, we are fully equipped to address comprehensive breastfeeding challenges.",
-      "Routine wellness checkups and proactive healthcare form the cornerstone of our practice, ensuring your child consistently meets vital developmental targets and enjoys long-term well-being.",
+      "Routine wellness checkups and preventive care form the cornerstone of our practice, so your child's growth and development are monitored consistently against established milestones.",
     ],
   },
 } as const;
@@ -184,7 +184,7 @@ export const FAQ_ITEMS = [
   {
     question: "Do you offer online or teleconsultations?",
     answer:
-      "Yes. We offer teleconsultations for breastfeeding and lactation issues, so you can get expert guidance from home.",
+      "Yes. We offer teleconsultations for breastfeeding and lactation issues, so you can get lactation guidance from home.",
   },
   {
     question: "What should I bring to my child's first visit?",
@@ -199,7 +199,7 @@ export const FAQ_ITEMS = [
   {
     question: "Why should I choose Vatsalya Children Care?",
     answer:
-      "Your child is cared for directly by a fully credentialed pediatrician (MD Pediatrics) who is also a neonatologist and lactation consultant. We combine expert medical care with genuine warmth, in a calm, child-friendly clinic in Sola, Ahmedabad.",
+      "Your child is cared for directly by a fully credentialed pediatrician (MD Pediatrics) who is also a neonatologist and lactation consultant. We combine credentialed clinical care with genuine warmth, in a calm, child-friendly clinic in Sola, Ahmedabad.",
   },
 ] as const;
 
