@@ -9,7 +9,7 @@ import { NAP } from "./brand";
 const PHOTOS = [
   { src: "/img/baby-laugh.jpg", pos: "left-[5%] top-[12%]", alt: "A happy, healthy baby" },
   { src: "/img/checkup.jpg", pos: "right-[5%] top-[9%]", alt: "A child at a gentle health check-up" },
-  { src: "/img/mother-child.jpg", pos: "left-[7%] bottom-[10%]", alt: "A mother and child at the clinic" },
+  { src: "/img/mother-child.jpg", pos: "left-[7%] bottom-[10%]", alt: "A mother holding her child" },
   { src: "/img/newborn-mother.jpg", pos: "right-[6%] bottom-[12%]", alt: "A mother holding her newborn" },
 ];
 

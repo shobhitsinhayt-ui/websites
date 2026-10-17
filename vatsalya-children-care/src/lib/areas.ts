@@ -29,7 +29,7 @@ export const AREAS: Area[] = [
     name: "Gota",
     metaDescription:
       "Pediatrician near Gota, Ahmedabad. Dr. Aashita A. Sinha (MBBS, MD Pediatrics) offers vaccination, newborn care and lactation support for children 0 to 18 years, a short drive from Gota in Science City, Sola.",
-    lead: "Warm, expert pediatric, newborn and lactation care for families in Gota, a short drive away in Science City, Sola.",
+    lead: "Warm pediatric, newborn and lactation care for families in Gota, a short drive away in Science City, Sola.",
     intro: [
       "Looking for a pediatrician near Gota? Vatsalya Children Care is a short drive away in Science City, Sola, caring for children from birth through 18 years. The clinic is open to families across Gota, from Vandemataram Cross Roads and Gota Cross Roads to the Godrej Garden City side. Dr. Aashita A. Sinha (MBBS, MD Pediatrics) sees children by appointment, in unhurried consultation slots, in a child-friendly clinic.",
       "Whether it is a routine vaccination, a newborn checkup, a fever that will not settle, or breastfeeding support for a new mother, your child is seen directly by a fully qualified pediatrician, neonatologist and certified lactation consultant, not a rushed queue. You get time, clear explanations, and a care plan built with you.",
@@ -50,7 +50,7 @@ export const AREAS: Area[] = [
     name: "Thaltej",
     metaDescription:
       "Pediatrician near Thaltej, Ahmedabad. Dr. Aashita A. Sinha (MBBS, MD Pediatrics) offers vaccination, newborn care and lactation support for children 0 to 18 years, a short drive from Thaltej in Science City, Sola.",
-    lead: "Warm, expert pediatric, newborn and lactation care for Thaltej families, a short drive away in Science City, Sola.",
+    lead: "Warm pediatric, newborn and lactation care for Thaltej families, a short drive away in Science City, Sola.",
     intro: [
       "Looking for a pediatrician near Thaltej? Vatsalya Children Care sits a short drive away in Science City, Sola, looking after children from birth through 18 years. The clinic is open to families from Thaltej, from the Drive-In Road and SG Highway side to Thaltej Cross Roads. Dr. Aashita A. Sinha (MBBS, MD Pediatrics) sees children by appointment, in unhurried consultation slots.",
       "From newborn checkups and IAP vaccinations to fevers, growth worries and breastfeeding support, your child is seen directly by a qualified pediatrician, neonatologist and certified lactation consultant, with time to listen and to explain.",
@@ -71,7 +71,7 @@ export const AREAS: Area[] = [
     name: "Chandlodiya",
     metaDescription:
       "Pediatrician near Chandlodiya, Ahmedabad. Dr. Aashita A. Sinha (MBBS, MD Pediatrics) offers vaccination, newborn and lactation care for children 0 to 18 years, close by in Science City, Sola.",
-    lead: "Gentle, expert pediatric, newborn and lactation care for Chandlodiya families, close by in Science City, Sola.",
+    lead: "Gentle pediatric, newborn and lactation care for Chandlodiya families, close by in Science City, Sola.",
     intro: [
       "Looking for a pediatrician close to Chandlodiya? Vatsalya Children Care is nearby in Science City, Sola, caring for children from birth through 18 years. The clinic is open to families across Chandlodiya, from Nirnay Nagar and the Chandlodiya railway station area toward Gota. Dr. Aashita A. Sinha (MBBS, MD Pediatrics) sees children by appointment, in unhurried consultation slots.",
       "Whether it is a vaccination on the IAP schedule, a newborn concern, a stubborn cough, or help with breastfeeding, your child is seen directly by a qualified pediatrician, neonatologist and certified lactation consultant.",
