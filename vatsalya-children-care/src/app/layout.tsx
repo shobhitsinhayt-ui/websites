@@ -29,20 +29,20 @@ const body = Inter({
 export const metadata: Metadata = {
   title: {
     default:
-      "Best Pediatrician in Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
+      "Pediatrician in Sola, Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
     template: "%s | Vatsalya Children Care",
   },
   description:
     "Vatsalya Children Care, expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant). Vaccination, newborn care, breastfeeding support for children 0 to 18 years. Book on WhatsApp: +91 90160 39796.",
   metadataBase: new URL(NAP.website),
   keywords: [
-    "best pediatrician in Ahmedabad",
+    "pediatrician in Ahmedabad",
     "child specialist Sola Ahmedabad",
     "pediatric clinic near Science City",
     "pediatrician in Gota Ahmedabad",
     "child specialist Thaltej",
     "pediatrician near Chandlodiya",
-    "best children doctor Ahmedabad",
+    "children doctor Ahmedabad",
     "pediatrician near Kargil Petrol Pump",
     "vaccination clinic Ahmedabad",
     "newborn doctor Ahmedabad",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     url: NAP.website,
     siteName: NAP.name,
     title:
-      "Best Pediatrician in Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
+      "Pediatrician in Sola, Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
     description:
       "Expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha, MD Pediatrics, Neonatologist & Lactation Consultant. Book on WhatsApp.",
     images: [
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Best Pediatrician in Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
+      "Pediatrician in Sola, Ahmedabad | Vatsalya Children Care | Dr. Aashita Sinha",
     description:
       "Expert pediatric care in Sola, Ahmedabad. Dr. Aashita A. Sinha, MD Pediatrics, Neonatologist & Lactation Consultant.",
     images: ["/og-image.png"],

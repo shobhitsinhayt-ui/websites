@@ -24,7 +24,7 @@ export async function generateMetadata({
   const area = getArea(slug);
   if (!area) return {};
   const url = `${NAP.website}/pediatrician-in/${area.slug}`;
-  const title = `Best Pediatrician in ${area.name}, Ahmedabad`;
+  const title = `Pediatrician in ${area.name}, Ahmedabad`;
   return {
     title,
     description: area.metaDescription,
@@ -119,7 +119,7 @@ export default async function AreaPage({
 
       <PageHero
         eyebrow={`Pediatrician in ${area.name}`}
-        title="Best Pediatrician in"
+        title="Pediatrician in"
         accent={`${area.name}, Ahmedabad`}
         subtitle={area.lead}
       />
