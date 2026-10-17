@@ -106,7 +106,7 @@ export const BRAND = {
 
 export const COPY = {
   hero: {
-    h1: "Best Pediatrician in Sola, Ahmedabad, Vatsalya Children Care",
+    h1: "Pediatrician in Sola, Ahmedabad, Vatsalya Children Care",
     subhead:
       "Compassionate, expert care for your child from newborn through adolescence, led by Dr. Aashita A. Sinha (MBBS, MD Pediatrics, Neonatologist & Lactation Consultant).",
     primaryCTA: "Book Appointment on WhatsApp",
