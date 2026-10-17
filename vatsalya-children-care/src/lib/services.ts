@@ -32,7 +32,7 @@ export const SERVICES: Service[] = [
     subtitle: "Up to 18 years",
     image: "/img/checkup.jpg",
     description:
-      "Expert day-to-day medical care for children of every age, from common fevers, coughs, and infections to ongoing health concerns, with patience, clear explanations, and a calm, child-friendly approach.",
+      "Day-to-day medical care for children of every age, from common fevers, coughs, and infections to ongoing health concerns, with patience, clear explanations, and a calm, child-friendly approach.",
   },
   {
     icon: Shield,
@@ -104,6 +104,6 @@ export const SERVICES: Service[] = [
     subtitle: "Breastfeeding Support",
     image: "/img/newborn-mother.jpg",
     description:
-      "Can't visit in person? Get expert lactation support from home through online consultations, practical, reassuring guidance for feeding challenges whenever you need it.",
+      "Can't visit in person? Get lactation support from home through online consultations, practical, reassuring guidance for feeding challenges whenever you need it.",
   },
 ];

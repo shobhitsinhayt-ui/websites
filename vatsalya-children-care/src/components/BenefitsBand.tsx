@@ -11,7 +11,7 @@ import {
 } from "framer-motion";
 
 const BENEFITS = [
-  "Expert MD Pediatrician",
+  "MD Pediatrician",
   "Certified Lactation Support",
   "IAP 2025 Vaccination",
   "Warm, Child-Friendly Clinic",

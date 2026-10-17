@@ -1,5 +1,5 @@
 // src/components/Footer.tsx
-import { NAP } from "./brand";
+import { NAP, DOCTOR } from "./brand";
 import FooterWordmark from "./FooterWordmark";
 import HoverLink from "./HoverLink";
 
@@ -84,8 +84,23 @@ export default function Footer() {
           <Group label="Connect" links={CONNECT} />
         </div>
 
+        {/* Practitioner registration + image disclosure.
+            Registration details are permitted patient information under the
+            ethical-advertising guidelines; the image note keeps the
+            illustrative photography from reading as real patients. */}
+        <div className="mt-14 space-y-1.5 border-t border-navy/10 pt-6">
+          <p className="font-poppins text-xs text-navy-deep/70">
+            {DOCTOR.name}, {DOCTOR.credentials} · Gujarat Medical Council Reg.
+            Nos., MBBS {DOCTOR.regMbbs} · MD Pediatrics {DOCTOR.regMd}
+          </p>
+          <p className="font-poppins text-xs text-navy-deep/60">
+            Photographs other than Dr. Sinha&apos;s are illustrative,
+            AI-generated images. They do not depict patients of this clinic.
+          </p>
+        </div>
+
         {/* Copyright row */}
-        <div className="mt-14 flex flex-col items-start justify-between gap-2 border-t border-navy/10 pt-6 sm:flex-row sm:items-center">
+        <div className="mt-6 flex flex-col items-start justify-between gap-2 border-t border-navy/10 pt-6 sm:flex-row sm:items-center">
           <p className="font-poppins text-xs text-navy-deep/70">
             © {year} Copyright · {NAP.name}
           </p>
